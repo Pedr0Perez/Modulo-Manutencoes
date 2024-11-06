@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "Q4hCVigYgj23jJ3iaROZdAASpi3NVEy4vH16dTy9XV0=",
+  "Source": "ModuloManutencoes",
+  "BasePath": "_content/ModuloManutencoes",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ModuloManutencoes\\wwwroot",
+      "Source": "ModuloManutencoes",
+      "ContentRoot": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "SourceId": "ModuloManutencoes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "RelativePath": "swagger-ui/SwaggerDark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\SwaggerDark.css"
+    },
+    {
+      "Identity": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "SourceId": "ModuloManutencoes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "RelativePath": "swagger-ui/SwaggerDark.user.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\SwaggerDark.user.css"
+    }
+  ]
+}

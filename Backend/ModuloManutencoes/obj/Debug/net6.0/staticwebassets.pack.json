@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "PackagePath": "staticwebassets\\swagger-ui\\SwaggerDark.css"
+    },
+    {
+      "Id": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "PackagePath": "staticwebassets\\swagger-ui\\SwaggerDark.user.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ModuloManutencoes.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ModuloManutencoes.props",
+      "PackagePath": "build\\ModuloManutencoes.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ModuloManutencoes.props",
+      "PackagePath": "buildMultiTargeting\\ModuloManutencoes.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ModuloManutencoes.props",
+      "PackagePath": "buildTransitive\\ModuloManutencoes.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
