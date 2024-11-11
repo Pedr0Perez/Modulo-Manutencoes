@@ -8,7 +8,7 @@ using ModuloManutencoes.Repositories.Interfaces;
 
 namespace ModuloManutencoes.Repositories
 {
-    public class TipoMemoriaVramRepository : ICrud<int, TipoMemoriaVramDTO>, ITipoMemoriaVramRepository
+    public class TipoMemoriaVramRepository : ICrud<int, TipoMemoriaVramDTO, TipoMemoriaVramGetDTO>, ITipoMemoriaVramRepository
     {
         private readonly MODMANUTENCOESContext _modManutencoesContext;
 
@@ -17,11 +17,11 @@ namespace ModuloManutencoes.Repositories
             _modManutencoesContext = modManutencoesContext;
         }
 
-        public async Task<IEnumerable<TipoMemoriaVramDTO>> GetAll()
+        public async Task<IEnumerable<TipoMemoriaVramGetDTO>> GetAll()
         {
-            IEnumerable<TipoMemoriaVramDTO> listaTiposVram = await _modManutencoesContext.Vramtype
+            IEnumerable<TipoMemoriaVramGetDTO> listaTiposVram = await _modManutencoesContext.Vramtype
                                                             .Where(t => t.Active == "Y")
-                                                            .Select(t => new TipoMemoriaVramDTO()
+                                                            .Select(t => new TipoMemoriaVramGetDTO()
                                                             {
                                                                 Id = t.Id,
                                                                 Descricao = t.TypeName!
@@ -30,11 +30,11 @@ namespace ModuloManutencoes.Repositories
             return listaTiposVram;
         }
 
-        public async Task<TipoMemoriaVramDTO?> GetById(int tipoVramId)
+        public async Task<TipoMemoriaVramGetDTO?> GetById(int tipoVramId)
         {
-            TipoMemoriaVramDTO? tipoVram = await _modManutencoesContext.Vramtype
+            TipoMemoriaVramGetDTO? tipoVram = await _modManutencoesContext.Vramtype
                                             .Where(t => t.Active == "Y" && t.Id == tipoVramId)
-                                            .Select(t => new TipoMemoriaVramDTO
+                                            .Select(t => new TipoMemoriaVramGetDTO
                                             {
                                                 Id = t.Id,
                                                 Descricao = t.TypeName!

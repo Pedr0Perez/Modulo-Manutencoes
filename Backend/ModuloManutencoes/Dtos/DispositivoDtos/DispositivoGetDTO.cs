@@ -3,8 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace ModuloManutencoes.Dtos.DispositivoDtos
 {
-    public class DispositivoDTO
+    public class DispositivoGetDTO
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "O tipo de dispositivo é obrigatório.")]
         public int Tipo { get; set; }
         [Required]

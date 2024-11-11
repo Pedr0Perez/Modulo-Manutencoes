@@ -13,25 +13,25 @@ namespace ModuloManutencoes.Services
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly ICrud<int, UsuarioDTO> _usuarioRepositoyCrud;
+        private readonly ICrud<int, UsuarioDTO, UsuarioGetDTO> _usuarioRepositoyCrud;
         private readonly IUsuarioRepository _usuarioRepositoryValidation;
 
-        public UsuarioService(ICrud<int, UsuarioDTO> usuarioRepositoyCrud, IUsuarioRepository usuarioRepositoryValidation)
+        public UsuarioService(ICrud<int, UsuarioDTO, UsuarioGetDTO> usuarioRepositoyCrud, IUsuarioRepository usuarioRepositoryValidation)
         {
             _usuarioRepositoyCrud = usuarioRepositoyCrud;
             _usuarioRepositoryValidation = usuarioRepositoryValidation;
         }
 
-        public async Task<IEnumerable<UsuarioDTO>> RetornarListaUsuarios()
+        public async Task<IEnumerable<UsuarioGetDTO>> RetornarListaUsuarios()
         {
-            IEnumerable<UsuarioDTO> listaUsuarios = await _usuarioRepositoyCrud.GetAll();
+            IEnumerable<UsuarioGetDTO> listaUsuarios = await _usuarioRepositoyCrud.GetAll();
 
             return listaUsuarios;
         }
 
-        public async Task<UsuarioDTO?> RetornarUsuario(int userId)
+        public async Task<UsuarioGetDTO?> RetornarUsuario(int userId)
         {
-            UsuarioDTO? usuario = await _usuarioRepositoyCrud.GetById(userId);
+            UsuarioGetDTO? usuario = await _usuarioRepositoyCrud.GetById(userId);
 
             return usuario;
         }

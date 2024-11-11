@@ -17,16 +17,16 @@ namespace ModuloManutencoes.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UsuarioDTO>>> RetornarListaUsuarios()
+        public async Task<ActionResult<IEnumerable<UsuarioGetDTO>>> RetornarListaUsuarios()
         {
-            IEnumerable<UsuarioDTO> listaUsuarios = await _usuarioService.RetornarListaUsuarios();
+            IEnumerable<UsuarioGetDTO> listaUsuarios = await _usuarioService.RetornarListaUsuarios();
             return Ok(listaUsuarios);
         }
 
         [HttpGet("{userId:int}")]
-        public async Task<ActionResult<UsuarioDTO?>> RetornarUsuario([FromRoute] int userId)
+        public async Task<ActionResult<UsuarioGetDTO?>> RetornarUsuario([FromRoute] int userId)
         {
-            UsuarioDTO? usuario = await _usuarioService.RetornarUsuario(userId);
+            UsuarioGetDTO? usuario = await _usuarioService.RetornarUsuario(userId);
             return Ok(usuario);
         }
 

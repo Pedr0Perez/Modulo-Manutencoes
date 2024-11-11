@@ -30,57 +30,57 @@ namespace ModuloManutencoes.Middlewares
             }
             catch (UsuarioNaoEncontradoException e)
             {
-                context.Response.StatusCode = StatusCodes.Status404NotFound;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "404. Isto é um erro.")}");
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (EmailJaCadastradoException e)
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "400. Isto é um erro.")}");
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (UsuarioApagadoException e)
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "400. Isto é um erro.")}");
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (TipoDispositivoNaoEncontradoException e)
             {
-                context.Response.StatusCode = StatusCodes.Status404NotFound;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"404. Isto é um erro.")}");
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (TipoMemoriaRamNaoEncontradoException e)
             {
-                context.Response.StatusCode = StatusCodes.Status404NotFound;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"404. Isto é um erro.")}");
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (DescricaoTipoMemoriaRamJaExisteException e)
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "400. Isto é um erro.")}");
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (TipoMemoriaVramNaoEncontradoException e)
             {
-                context.Response.StatusCode = StatusCodes.Status404NotFound;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"404. Isto é um erro.")}");
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (DescricaoTipoMemoriaVramJaExisteException e)
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "400. Isto é um erro.")}");
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (DispositivoNaoEncontradoException e)
             {
-                context.Response.StatusCode = StatusCodes.Status404NotFound;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"404. Isto é um erro.")}");
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (DispositivoJaExisteException e)
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : "400. Isto é um erro.")}");
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "500. Isto é um erro.");
+                _logger.LogError(e, $"500. Isto é um erro.");
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 await context.Response.WriteAsync($"{(ambiente == "Y" ? "Mensagem: " + e.Message + "\nDetalhes internos: " + (e.InnerException?.Message ?? "") : "500. Isto é um erro.")}");
             }

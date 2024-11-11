@@ -5,8 +5,8 @@ namespace ModuloManutencoes.Interfaces.Usuarios
 {
     public interface IUsuarioService
     {
-        Task<IEnumerable<UsuarioDTO>> RetornarListaUsuarios();
-        Task<UsuarioDTO?> RetornarUsuario(int userId);
+        Task<IEnumerable<UsuarioGetDTO>> RetornarListaUsuarios();
+        Task<UsuarioGetDTO?> RetornarUsuario(int userId);
         Task<MensagemAoClienteDTO> CadastrarUsuario(UsuarioDTO usuario);
         Task<MensagemAoClienteDTO> AtualizarUsuario(int userId, UsuarioDTO usuario);
         Task<MensagemAoClienteDTO> ApagarUsuario(int userId);

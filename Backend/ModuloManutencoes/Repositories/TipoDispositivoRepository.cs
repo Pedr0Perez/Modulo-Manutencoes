@@ -8,7 +8,7 @@ using ModuloManutencoes.Repositories.Interfaces;
 
 namespace ModuloManutencoes.Repositories
 {
-    public class TipoDispositivoRepository : ICrud<int, TipoDispositivoDTO>, ITipoDispositivoRepository
+    public class TipoDispositivoRepository : ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO>, ITipoDispositivoRepository
     {
         private readonly MODMANUTENCOESContext _modManutencoesContext;
 
@@ -17,11 +17,11 @@ namespace ModuloManutencoes.Repositories
             _modManutencoesContext = modManutencoesContext;
         }
 
-        public async Task<IEnumerable<TipoDispositivoDTO>> GetAll()
+        public async Task<IEnumerable<TipoDispositivoGetDTO>> GetAll()
         {
-            IEnumerable<TipoDispositivoDTO> listaTipoDispositivo = await _modManutencoesContext.Disptype
+            IEnumerable<TipoDispositivoGetDTO> listaTipoDispositivo = await _modManutencoesContext.Disptype
                                                                     .Where(d => d.Active == "Y")
-                                                                    .Select(d => new TipoDispositivoDTO
+                                                                    .Select(d => new TipoDispositivoGetDTO
                                                                     {
                                                                         Id = d.Id,
                                                                         Descricao = d.TypeDisp!
@@ -30,11 +30,11 @@ namespace ModuloManutencoes.Repositories
             return listaTipoDispositivo;
         }
 
-        public async Task<TipoDispositivoDTO?> GetById(int tipoDispId)
+        public async Task<TipoDispositivoGetDTO?> GetById(int tipoDispId)
         {
-            TipoDispositivoDTO? dispositivo = await _modManutencoesContext.Disptype
+            TipoDispositivoGetDTO? dispositivo = await _modManutencoesContext.Disptype
                                                                     .Where(d => d.Active == "Y" && d.Id == tipoDispId)
-                                                                    .Select(d => new TipoDispositivoDTO
+                                                                    .Select(d => new TipoDispositivoGetDTO
                                                                     {
                                                                         Id = d.Id,
                                                                         Descricao = d.TypeDisp!

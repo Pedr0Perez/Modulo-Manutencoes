@@ -5,8 +5,8 @@ namespace ModuloManutencoes.Services.Interfaces
 {
     public interface ITipoMemoriaRamService
     {
-        Task<IEnumerable<TipoMemoriaRamDTO>> RetornarTodosTiposMemoriasRam();
-        Task<TipoMemoriaRamDTO?> RetornarTipoMemoriaRam(int id);
+        Task<IEnumerable<TipoMemoriaRamGetDTO>> RetornarTodosTiposMemoriasRam();
+        Task<TipoMemoriaRamGetDTO?> RetornarTipoMemoriaRam(int id);
         Task<MensagemAoClienteDTO> AdicionarTipoMemoriaRam(TipoMemoriaRamDTO tipoMemoriaRam);
         Task<MensagemAoClienteDTO> AtualizarTipoMemoriaRam(int id, TipoMemoriaRamDTO tipoMemoriaRam);
         Task<MensagemAoClienteDTO> ApagarTipoMemoriaRam(int id);

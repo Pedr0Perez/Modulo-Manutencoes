@@ -32,23 +32,23 @@ namespace ModuloManutencoes
             builder.Services.AddDbContext<MODMANUTENCOESContext>(options => options.UseSqlServer(conexaoDb));
 
             //Repository do usuário
-            builder.Services.AddScoped<ICrud<int, UsuarioDTO>, UsuarioRepository>();
+            builder.Services.AddScoped<ICrud<int, UsuarioDTO, UsuarioGetDTO>, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
             //Repository do tipo de dispositivo
-            builder.Services.AddScoped<ICrud<int, TipoDispositivoDTO>, TipoDispositivoRepository>();
+            builder.Services.AddScoped<ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO>, TipoDispositivoRepository>();
             builder.Services.AddScoped<ITipoDispositivoRepository, TipoDispositivoRepository>();
 
             //Repository do tipo de memória ram
-            builder.Services.AddScoped<ICrud<int, TipoMemoriaRamDTO>, TipoMemoriaRamRepository>();
+            builder.Services.AddScoped<ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO>, TipoMemoriaRamRepository>();
             builder.Services.AddScoped<ITipoMemoriaRamRepository, TipoMemoriaRamRepository>();
 
             //Repository do tipo de memória vram
-            builder.Services.AddScoped<ICrud<int, TipoMemoriaVramDTO>, TipoMemoriaVramRepository>();
+            builder.Services.AddScoped<ICrud<int, TipoMemoriaVramDTO, TipoMemoriaVramGetDTO>, TipoMemoriaVramRepository>();
             builder.Services.AddScoped<ITipoMemoriaVramRepository, TipoMemoriaVramRepository>();
 
             //Repository do dispositivo
-            builder.Services.AddScoped<ICrud<int, DispositivoDTO>, DispositivoRepository>();
+            builder.Services.AddScoped<ICrud<int, DispositivoDTO, DispositivoGetDTO>, DispositivoRepository>();
             builder.Services.AddScoped<IDispositivoRepository, DispositivoRepository>();
 
             //Service da criptografia da senha

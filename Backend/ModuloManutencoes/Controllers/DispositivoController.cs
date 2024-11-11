@@ -17,17 +17,17 @@ namespace ModuloManutencoes.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DispositivoDTO>>> RetornarTodosDispositivos()
+        public async Task<ActionResult<IEnumerable<DispositivoGetDTO>>> RetornarTodosDispositivos()
         {
-            IEnumerable<DispositivoDTO> listaDispositivos = await _dispositivoService.RetornarTodosDispositivos();
+            IEnumerable<DispositivoGetDTO> listaDispositivos = await _dispositivoService.RetornarTodosDispositivos();
 
             return Ok(listaDispositivos);
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<DispositivoDTO?>> RetornarDispositivo([FromRoute] int id)
+        public async Task<ActionResult<DispositivoGetDTO?>> RetornarDispositivo([FromRoute] int id)
         {
-            DispositivoDTO? dispositivo = await _dispositivoService.RetornarDispositivo(id);
+            DispositivoGetDTO? dispositivo = await _dispositivoService.RetornarDispositivo(id);
 
             return Ok(dispositivo);
         }

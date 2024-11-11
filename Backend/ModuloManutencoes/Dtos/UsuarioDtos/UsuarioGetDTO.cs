@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace ModuloManutencoes.Dtos.UsuarioDtos
 {
-    public class UsuarioDTO
+    public class UsuarioGetDTO
     {
+        public int Id { get; set; }
         [Required(ErrorMessage = "O primeiro nome é obrigatório.")]
         [MaxLength(25, ErrorMessage = "O primeiro nome não pode ultrapassar 25 caracteres.")]
         public string PrimeiroNome { get; set; } = null!;

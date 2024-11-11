@@ -11,7 +11,7 @@ using ModuloManutencoes.Services.Interfaces;
 
 namespace ModuloManutencoes.Repositories
 {
-    public class UsuarioRepository : ICrud<int, UsuarioDTO>, IUsuarioRepository
+    public class UsuarioRepository : ICrud<int, UsuarioDTO, UsuarioGetDTO>, IUsuarioRepository
     {
         private readonly MODMANUTENCOESContext _modManutencoesContext;
         private readonly IPasswordHasher _passwordHasher;
@@ -22,11 +22,11 @@ namespace ModuloManutencoes.Repositories
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<IEnumerable<UsuarioDTO>> GetAll()
+        public async Task<IEnumerable<UsuarioGetDTO>> GetAll()
         {
-            IEnumerable<UsuarioDTO> listaUsuarios = await _modManutencoesContext.Usuarios
+            IEnumerable<UsuarioGetDTO> listaUsuarios = await _modManutencoesContext.Usuarios
                                                             .Where(u => u.Active == "Y")
-                                                            .Select(u => new UsuarioDTO
+                                                            .Select(u => new UsuarioGetDTO
                                                             {
                                                                 Id = u.Id,
                                                                 PrimeiroNome = u.FirstName,
@@ -43,11 +43,11 @@ namespace ModuloManutencoes.Repositories
             return listaUsuarios;
         }
 
-        public async Task<UsuarioDTO?> GetById(int userId)
+        public async Task<UsuarioGetDTO?> GetById(int userId)
         {
-            UsuarioDTO? usuario = await _modManutencoesContext.Usuarios
+            UsuarioGetDTO? usuario = await _modManutencoesContext.Usuarios
                                         .Where(u => u.Id == userId && u.Active == "Y")
-                                        .Select(u => new UsuarioDTO
+                                        .Select(u => new UsuarioGetDTO
                                         {
                                             Id = u.Id,
                                             PrimeiroNome = u.FirstName,

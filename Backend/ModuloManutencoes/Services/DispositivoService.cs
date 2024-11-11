@@ -1,6 +1,9 @@
 ﻿using ModuloManutencoes.Dtos.DispositivoDtos;
 using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Exceptions.DispositivoExceptions;
+using ModuloManutencoes.Exceptions.TipoDispositivoExceptions;
+using ModuloManutencoes.Exceptions.TipoMemoriaRamExceptions;
+using ModuloManutencoes.Exceptions.TipoMemoriaVramExceptions;
 using ModuloManutencoes.Interfaces;
 using ModuloManutencoes.Repositories.Interfaces;
 using ModuloManutencoes.Services.Interfaces;
@@ -9,25 +12,25 @@ namespace ModuloManutencoes.Services
 {
     public class DispositivoService : IDispositivoService
     {
-        private readonly ICrud<int, DispositivoDTO> _dispositivoRepositoryCrud;
+        private readonly ICrud<int, DispositivoDTO, DispositivoGetDTO> _dispositivoRepositoryCrud;
         private readonly IDispositivoRepository _dispositivoRepositoryValidation;
 
-        public DispositivoService(ICrud<int, DispositivoDTO> dispositivoRepositoryCrud, IDispositivoRepository dispositivoRepositoryValidation)
+        public DispositivoService(ICrud<int, DispositivoDTO, DispositivoGetDTO> dispositivoRepositoryCrud, IDispositivoRepository dispositivoRepositoryValidation)
         {
             _dispositivoRepositoryCrud = dispositivoRepositoryCrud;
             _dispositivoRepositoryValidation = dispositivoRepositoryValidation;
         }
 
-        public async Task<IEnumerable<DispositivoDTO>> RetornarTodosDispositivos()
+        public async Task<IEnumerable<DispositivoGetDTO>> RetornarTodosDispositivos()
         {
-            IEnumerable<DispositivoDTO> listaDispositivos = await _dispositivoRepositoryCrud.GetAll();
+            IEnumerable<DispositivoGetDTO> listaDispositivos = await _dispositivoRepositoryCrud.GetAll();
 
             return listaDispositivos;
         }
 
-        public async Task<DispositivoDTO?> RetornarDispositivo(int id)
+        public async Task<DispositivoGetDTO?> RetornarDispositivo(int id)
         {
-            DispositivoDTO? dispositivo = await _dispositivoRepositoryCrud.GetById(id);
+            DispositivoGetDTO? dispositivo = await _dispositivoRepositoryCrud.GetById(id);
 
             return dispositivo;
         }
@@ -35,9 +38,28 @@ namespace ModuloManutencoes.Services
         public async Task<MensagemAoClienteDTO> AdicionarDispositivo(DispositivoDTO dispositivo)
         {
             bool validarSeJaExisteDispositivoComEsteNome = await _dispositivoRepositoryValidation.ValidarSeJaExisteDispositivoComEsteNome(dispositivo.Nome);
+            bool validarSeTipoDispositivoExiste = await _dispositivoRepositoryValidation.ValidarSeTipoDispositivoExiste(dispositivo.Tipo);
+            bool validarSeTipoRamExiste = await _dispositivoRepositoryValidation.ValidarSeTipoRamExiste(dispositivo.RamTipo);
+            bool validarSeTipoVramExiste = await _dispositivoRepositoryValidation.ValidarSeTipoVramExiste(dispositivo.VramTipo);
+
             if (!validarSeJaExisteDispositivoComEsteNome)
             {
                 throw new DispositivoJaExisteException();
+            }
+
+            if (!validarSeTipoDispositivoExiste)
+            {
+                throw new TipoDispositivoNaoEncontradoException();
+            }
+
+            if (!validarSeTipoRamExiste)
+            {
+                throw new TipoMemoriaRamNaoEncontradoException();
+            }
+
+            if (!validarSeTipoVramExiste)
+            {
+                throw new TipoMemoriaVramNaoEncontradoException();
             }
 
             MensagemAoClienteDTO adicionarDispositivo = await _dispositivoRepositoryCrud.Create(dispositivo);
@@ -49,6 +71,9 @@ namespace ModuloManutencoes.Services
         {
             bool validarSeDispositivoExiste = await _dispositivoRepositoryValidation.ValidarSeDispositivoExiste(id);
             bool validarSeJaExisteDispositivoComEsteNome = await _dispositivoRepositoryValidation.ValidarSeJaExisteDispositivoComEsteNome(id, dispositivo.Nome);
+            bool validarSeTipoDispositivoExiste = await _dispositivoRepositoryValidation.ValidarSeTipoDispositivoExiste(dispositivo.Tipo);
+            bool validarSeTipoRamExiste = await _dispositivoRepositoryValidation.ValidarSeTipoRamExiste(dispositivo.RamTipo);
+            bool validarSeTipoVramExiste = await _dispositivoRepositoryValidation.ValidarSeTipoVramExiste(dispositivo.VramTipo);
 
             if (!validarSeDispositivoExiste)
             {
@@ -58,6 +83,21 @@ namespace ModuloManutencoes.Services
             if (!validarSeJaExisteDispositivoComEsteNome)
             {
                 throw new DispositivoJaExisteException();
+            }
+
+            if (!validarSeTipoDispositivoExiste)
+            {
+                throw new TipoDispositivoNaoEncontradoException();
+            }
+
+            if (!validarSeTipoRamExiste)
+            {
+                throw new TipoMemoriaRamNaoEncontradoException();
+            }
+
+            if (!validarSeTipoVramExiste)
+            {
+                throw new TipoMemoriaVramNaoEncontradoException();
             }
 
             MensagemAoClienteDTO atualizarDispositivo = await _dispositivoRepositoryCrud.Update(id, dispositivo);

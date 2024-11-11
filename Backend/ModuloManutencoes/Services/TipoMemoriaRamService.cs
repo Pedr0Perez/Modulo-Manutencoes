@@ -9,25 +9,25 @@ namespace ModuloManutencoes.Services
 {
     public class TipoMemoriaRamService : ITipoMemoriaRamService
     {
-        private readonly ICrud<int, TipoMemoriaRamDTO> _tipoMemoriaRamCrud;
+        private readonly ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> _tipoMemoriaRamCrud;
         private readonly ITipoMemoriaRamRepository _tipoMemoriaRamValidation;
 
-        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO> tipoMemoriaRamCrud, ITipoMemoriaRamRepository tipoMemoriaRamValidation)
+        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> tipoMemoriaRamCrud, ITipoMemoriaRamRepository tipoMemoriaRamValidation)
         {
             _tipoMemoriaRamCrud = tipoMemoriaRamCrud;
             _tipoMemoriaRamValidation = tipoMemoriaRamValidation;
         }
 
-        public async Task<IEnumerable<TipoMemoriaRamDTO>> RetornarTodosTiposMemoriasRam()
+        public async Task<IEnumerable<TipoMemoriaRamGetDTO>> RetornarTodosTiposMemoriasRam()
         {
-            IEnumerable<TipoMemoriaRamDTO> listaTipoRam = await _tipoMemoriaRamCrud.GetAll();
+            IEnumerable<TipoMemoriaRamGetDTO> listaTipoRam = await _tipoMemoriaRamCrud.GetAll();
 
             return listaTipoRam;
         }
 
-        public async Task<TipoMemoriaRamDTO?> RetornarTipoMemoriaRam(int id)
+        public async Task<TipoMemoriaRamGetDTO?> RetornarTipoMemoriaRam(int id)
         {
-            TipoMemoriaRamDTO? tipoRam = await _tipoMemoriaRamCrud.GetById(id);
+            TipoMemoriaRamGetDTO? tipoRam = await _tipoMemoriaRamCrud.GetById(id);
 
             return tipoRam;
         }

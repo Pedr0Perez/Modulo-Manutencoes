@@ -9,24 +9,24 @@ namespace ModuloManutencoes.Services
 {
     public class TipoDispositivoService : ITipoDispositivoService
     {
-        private readonly ICrud<int, TipoDispositivoDTO> _tipoDispositivoCrud;
+        private readonly ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO> _tipoDispositivoCrud;
         private readonly ITipoDispositivoRepository _tipoDispositivoValidation;
 
-        public TipoDispositivoService(ICrud<int, TipoDispositivoDTO> tipoDispositivoCrud, ITipoDispositivoRepository tipoDispositivoValidation)
+        public TipoDispositivoService(ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO> tipoDispositivoCrud, ITipoDispositivoRepository tipoDispositivoValidation)
         {
             _tipoDispositivoCrud = tipoDispositivoCrud;
             _tipoDispositivoValidation = tipoDispositivoValidation;
         }
 
-        public async Task<IEnumerable<TipoDispositivoDTO>> RetornarTodosTiposDispositivos()
+        public async Task<IEnumerable<TipoDispositivoGetDTO>> RetornarTodosTiposDispositivos()
         {
-            IEnumerable<TipoDispositivoDTO> listaTipoDispositivo = await _tipoDispositivoCrud.GetAll();
+            IEnumerable<TipoDispositivoGetDTO> listaTipoDispositivo = await _tipoDispositivoCrud.GetAll();
             return listaTipoDispositivo;
         }
 
-        public async Task<TipoDispositivoDTO?> RetornarTipoDispositivo(int idTipoDisp)
+        public async Task<TipoDispositivoGetDTO?> RetornarTipoDispositivo(int idTipoDisp)
         {
-            TipoDispositivoDTO? tipoDispositivo = await _tipoDispositivoCrud.GetById(idTipoDisp);
+            TipoDispositivoGetDTO? tipoDispositivo = await _tipoDispositivoCrud.GetById(idTipoDisp);
             return tipoDispositivo;
         }
 

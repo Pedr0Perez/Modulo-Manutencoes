@@ -18,17 +18,17 @@ namespace ModuloManutencoes.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TipoMemoriaRamDTO>>> RetornarTodosTiposMemoriasRam()
+        public async Task<ActionResult<IEnumerable<TipoMemoriaRamGetDTO>>> RetornarTodosTiposMemoriasRam()
         {
-            IEnumerable<TipoMemoriaRamDTO> listaTipoRam = await _tipoMemoriaRamService.RetornarTodosTiposMemoriasRam();
+            IEnumerable<TipoMemoriaRamGetDTO> listaTipoRam = await _tipoMemoriaRamService.RetornarTodosTiposMemoriasRam();
 
             return Ok(listaTipoRam);
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<TipoMemoriaRamDTO?>> RetornarTipoMemoriaRam([FromRoute] int id)
+        public async Task<ActionResult<TipoMemoriaRamGetDTO?>> RetornarTipoMemoriaRam([FromRoute] int id)
         {
-            TipoMemoriaRamDTO? tipoRam = await _tipoMemoriaRamService.RetornarTipoMemoriaRam(id);
+            TipoMemoriaRamGetDTO? tipoRam = await _tipoMemoriaRamService.RetornarTipoMemoriaRam(id);
 
             return Ok(tipoRam);
         }

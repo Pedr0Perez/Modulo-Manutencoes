@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ModuloManutencoes.Dtos.MemoriaDtos;
 using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Services.Interfaces;
@@ -18,17 +17,17 @@ namespace ModuloManutencoes.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TipoMemoriaVramDTO>>> RetornarTodosTiposMemoriasVram()
+        public async Task<ActionResult<IEnumerable<TipoMemoriaVramGetDTO>>> RetornarTodosTiposMemoriasVram()
         {
-            IEnumerable<TipoMemoriaVramDTO> listaTipoVram = await _tipoMemoriaVramService.RetornarTodosTiposMemoriasVram();
+            IEnumerable<TipoMemoriaVramGetDTO> listaTipoVram = await _tipoMemoriaVramService.RetornarTodosTiposMemoriasVram();
 
             return Ok(listaTipoVram);
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<TipoMemoriaVramDTO?>> RetornarTipoMemoriaVram([FromRoute] int id)
+        public async Task<ActionResult<TipoMemoriaVramGetDTO?>> RetornarTipoMemoriaVram([FromRoute] int id)
         {
-            TipoMemoriaVramDTO? tipoVram = await _tipoMemoriaVramService.RetornarTipoMemoriaVram(id);
+            TipoMemoriaVramGetDTO? tipoVram = await _tipoMemoriaVramService.RetornarTipoMemoriaVram(id);
 
             return Ok(tipoVram);
         }

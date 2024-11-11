@@ -8,7 +8,7 @@ using ModuloManutencoes.Repositories.Interfaces;
 
 namespace ModuloManutencoes.Repositories
 {
-    public class DispositivoRepository : ICrud<int, DispositivoDTO>, IDispositivoRepository
+    public class DispositivoRepository : ICrud<int, DispositivoDTO, DispositivoGetDTO>, IDispositivoRepository
     {
         private readonly MODMANUTENCOESContext _modManutencoesContext;
 
@@ -17,11 +17,11 @@ namespace ModuloManutencoes.Repositories
             _modManutencoesContext = modManutencoesContext;
         }
 
-        public async Task<IEnumerable<DispositivoDTO>> GetAll()
+        public async Task<IEnumerable<DispositivoGetDTO>> GetAll()
         {
-            IEnumerable<DispositivoDTO> listaDispositivos = await _modManutencoesContext.Dispositivo
+            IEnumerable<DispositivoGetDTO> listaDispositivos = await _modManutencoesContext.Dispositivo
                                                             .Where(d => d.Active == "Y")
-                                                            .Select(d => new DispositivoDTO
+                                                            .Select(d => new DispositivoGetDTO
                                                             {
                                                                 Id = d.Id,
                                                                 Tipo = d.DispType,
@@ -41,11 +41,11 @@ namespace ModuloManutencoes.Repositories
             return listaDispositivos;
         }
 
-        public async Task<DispositivoDTO?> GetById(int id)
+        public async Task<DispositivoGetDTO?> GetById(int id)
         {
-            DispositivoDTO? dispositivo = await _modManutencoesContext.Dispositivo
+            DispositivoGetDTO? dispositivo = await _modManutencoesContext.Dispositivo
                                                             .Where(d => d.Active == "Y" && d.Id == id)
-                                                            .Select(d => new DispositivoDTO
+                                                            .Select(d => new DispositivoGetDTO
                                                             {
                                                                 Id = d.Id,
                                                                 Tipo = d.DispType,
@@ -155,6 +155,37 @@ namespace ModuloManutencoes.Repositories
             Dispositivo? validar = await _modManutencoesContext.Dispositivo
                                     .Where(d => d.Active == "Y" && d.Id == id)
                                     .FirstOrDefaultAsync();
+
+            return validar != null;
+        }
+
+        public async Task<bool> ValidarSeTipoDispositivoExiste(int id)
+        {
+            Disptype? validar = await _modManutencoesContext.Disptype
+                                    .Where(t => t.Active == "Y" && t.Id == id)
+                                    .FirstOrDefaultAsync();
+
+            return validar != null;
+        }
+
+        public async Task<bool> ValidarSeTipoRamExiste(int? id)
+        {
+            if (id == null) return true;
+
+            Ramtype? validar = await _modManutencoesContext.Ramtype
+                                .Where(t => t.Active == "Y" && t.Id == id)
+                                .FirstOrDefaultAsync();
+
+            return validar != null;
+        }
+
+        public async Task<bool> ValidarSeTipoVramExiste(int? id)
+        {
+            if (id == null) return true;
+
+            Vramtype? validar = await _modManutencoesContext.Vramtype
+                                 .Where(t => t.Active == "Y" && t.Id == id)
+                                 .FirstOrDefaultAsync();
 
             return validar != null;
         }
