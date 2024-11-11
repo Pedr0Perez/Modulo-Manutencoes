@@ -1,4 +1,5 @@
-﻿using ModuloManutencoes.Exceptions.DispositivoExceptions;
+﻿using ModuloManutencoes.Exceptions.AutenticacaoExceptions;
+using ModuloManutencoes.Exceptions.DispositivoExceptions;
 using ModuloManutencoes.Exceptions.TipoDispositivoExceptions;
 using ModuloManutencoes.Exceptions.TipoMemoriaRamExceptions;
 using ModuloManutencoes.Exceptions.TipoMemoriaVramExceptions;
@@ -77,6 +78,16 @@ namespace ModuloManutencoes.Middlewares
             {
                 context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"400. Isto é um erro.")}");
+            }
+            catch (EnderecoEmailNaoExisteException e)
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"401. Isto é um erro.")}");
+            }
+            catch (SenhaIncorretaException e)
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsync($"{(ambiente == "Y" ? e.Message : $"401. Isto é um erro.")}");
             }
             catch (Exception e)
             {

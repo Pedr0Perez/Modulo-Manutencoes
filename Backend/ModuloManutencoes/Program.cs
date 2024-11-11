@@ -31,6 +31,9 @@ namespace ModuloManutencoes
             //Adicionando os contextos dos bancos de dados
             builder.Services.AddDbContext<MODMANUTENCOESContext>(options => options.UseSqlServer(conexaoDb));
 
+            //Repository da autenticação
+            builder.Services.AddScoped<IAutenticacaoRepository, AutenticacaoRepository>();
+
             //Repository do usuário
             builder.Services.AddScoped<ICrud<int, UsuarioDTO, UsuarioGetDTO>, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
@@ -68,6 +71,9 @@ namespace ModuloManutencoes
 
             //Service do dispositivo
             builder.Services.AddScoped<IDispositivoService, DispositivoService>();
+
+            //Service da autenticação
+            builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 
             var app = builder.Build();
 

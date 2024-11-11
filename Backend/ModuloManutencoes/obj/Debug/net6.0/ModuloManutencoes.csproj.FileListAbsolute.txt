@@ -225,3 +225,5 @@ C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloMa
 C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloManutencoes\obj\Debug\net6.0\ModuloManutencoes.pdb
 C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloManutencoes\obj\Debug\net6.0\ModuloManutencoes.genruntimeconfig.cache
 C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloManutencoes\obj\Debug\net6.0\ref\ModuloManutencoes.dll
+C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloManutencoes\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\vidad\OneDrive\Documentos\GIT\Módulo de Manutenções\Backend\ModuloManutencoes\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
