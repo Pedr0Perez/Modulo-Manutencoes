@@ -45,16 +45,16 @@ namespace ModuloManutencoes.Repositories
             return false;
         }
 
-        public async Task<DadosSessaoDTO> RetornarDadosSessao(string email)
+        public async Task<DadosUsuarioDTO> RetornarDadosSessao(string email)
         {
-            DadosSessaoDTO? dadosSessao = await _moduloManutencoesContext.Usuarios
+            DadosUsuarioDTO? dadosSessao = await _moduloManutencoesContext.Usuarios
                                             .Where(u => u.Mail == email)
-                                            .Select(u => new DadosSessaoDTO
+                                            .Select(u => new DadosUsuarioDTO
                                             {
+                                                Id = u.Id,
                                                 Email = u.Mail,
                                                 Nome = u.FirstName + " " + u.LastName,
-                                                Genero = u.Gender,
-                                                Token = "teste"
+                                                Genero = u.Gender
                                             }).FirstOrDefaultAsync();
 
             return dadosSessao!;

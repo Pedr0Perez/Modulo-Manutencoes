@@ -6,6 +6,6 @@ namespace ModuloManutencoes.Repositories.Interfaces
     {
         Task<bool> ValidarSeEmailExiste(string email);
         Task<bool> ValidarSenhaUsuario(string email, string senha);
-        Task<DadosSessaoDTO> RetornarDadosSessao(string email);
+        Task<DadosUsuarioDTO> RetornarDadosSessao(string email);
     }
 }

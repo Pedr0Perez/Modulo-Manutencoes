@@ -236,6 +236,16 @@ namespace ModuloManutencoes.Contexts
                     .HasMaxLength(64)
                     .IsUnicode(false)
                     .HasColumnName("state");
+
+                entity.Property(e => e.Admin)
+                    .HasMaxLength(64)
+                    .IsUnicode(false)
+                    .HasColumnName("admin");
+
+                entity.Property(e => e.SuperAdmin)
+                    .HasMaxLength(64)
+                    .IsUnicode(false)
+                    .HasColumnName("superAdmin");
             });
 
             modelBuilder.Entity<Vramtype>(entity =>

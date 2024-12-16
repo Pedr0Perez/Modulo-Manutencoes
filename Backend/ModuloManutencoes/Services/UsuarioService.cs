@@ -15,11 +15,13 @@ namespace ModuloManutencoes.Services
     {
         private readonly ICrud<int, UsuarioDTO, UsuarioGetDTO> _usuarioRepositoyCrud;
         private readonly IUsuarioRepository _usuarioRepositoryValidation;
+        private readonly IConfiguration _configuration;
 
-        public UsuarioService(ICrud<int, UsuarioDTO, UsuarioGetDTO> usuarioRepositoyCrud, IUsuarioRepository usuarioRepositoryValidation)
+        public UsuarioService(ICrud<int, UsuarioDTO, UsuarioGetDTO> usuarioRepositoyCrud, IUsuarioRepository usuarioRepositoryValidation, IConfiguration configuration)
         {
             _usuarioRepositoyCrud = usuarioRepositoyCrud;
             _usuarioRepositoryValidation = usuarioRepositoryValidation;
+            _configuration = configuration;
         }
 
         public async Task<IEnumerable<UsuarioGetDTO>> RetornarListaUsuarios()
@@ -82,6 +84,25 @@ namespace ModuloManutencoes.Services
             {
                 Mensagem = "Usuário excluído com sucesso."
             };
+        }
+
+        public async Task CadastrarUsuarioSuperAdministradorCasoNaoExistaNenhum() 
+        {
+            bool validarSeExisteAlgumUsuario = await _usuarioRepositoryValidation.ValidarSeExisteAlgumUsuarioCadastrado();
+
+            if (!validarSeExisteAlgumUsuario)
+            {
+                await _usuarioRepositoyCrud.Create(new UsuarioDTO
+                {
+                    PrimeiroNome = "Super",
+                    Sobrenome = "Administrador",
+                    Email = _configuration.GetSection("SuperAdmin")["Email"],
+                    Senha = _configuration.GetSection("SuperAdmin")["Password"],
+                    Genero = "E",
+                    Admin = "Y",
+                    SuperAdmin = "Y"
+                });
+            }
         }
     }
 }

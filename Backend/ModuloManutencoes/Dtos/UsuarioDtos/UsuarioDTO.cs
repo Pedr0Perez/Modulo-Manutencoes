@@ -20,6 +20,11 @@ namespace ModuloManutencoes.Dtos.UsuarioDtos
         public string? Email2 { get; set; }
         [MaxLength(20, ErrorMessage = "A senha não pode ultrapassar 20 caracteres.")]
         public string Senha { get; set; } = null!;
+        [Required(ErrorMessage = "É necessário especificar se o usuário é um administrador ou não.")]
+        public string Admin { get; set; } = null!;
+        [JsonIgnore]
+        [Required(ErrorMessage = "É necessário especificar se o usuário é um super administrador ou não.")]
+        public string SuperAdmin { get; set; } = "N";
         public DateTime? DataNascimento { get; set; }
         [MaxLength(1, ErrorMessage = "O tipo de gênero só suporta 1 caractere.")]
         public string Genero { get; set; } = null!;
@@ -38,6 +43,7 @@ namespace ModuloManutencoes.Dtos.UsuarioDtos
                 Sobrenome,
                 Email,
                 Email2,
+                Admin,
                 DataNascimento,
                 Genero,
                 Pais,

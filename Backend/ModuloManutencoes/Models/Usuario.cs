@@ -22,6 +22,8 @@ namespace ModuloManutencoes.Models
         public string? City { get; set; }
         public string? State { get; set; }
         public string Active { get; set; } = null!;
+        public string Admin { get; set; } = null!;
+        public string SuperAdmin { get; set; } = null!;
 
         public virtual ICollection<Manutenco> Manutencos { get; set; }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {}
+    "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {
+    "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
+        "projectUniqueName": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
         "projectName": "ModuloManutencoes",
-        "projectPath": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
+        "projectPath": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
         "packagesPath": "C:\\Users\\vidad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vidad\\OneDrive\\Documentos\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\obj\\",
+        "outputPath": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -105,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

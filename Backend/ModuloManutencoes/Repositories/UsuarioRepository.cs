@@ -78,7 +78,9 @@ namespace ModuloManutencoes.Repositories
                 Country = usuario.Pais,
                 City = usuario.Cidade,
                 State = usuario.Estado,
-                Active = "Y"
+                Active = "Y",
+                Admin = usuario.Admin,
+                SuperAdmin = usuario.SuperAdmin,
             });
 
             await _modManutencoesContext.SaveChangesAsync();
@@ -143,6 +145,13 @@ namespace ModuloManutencoes.Repositories
                              .FirstOrDefaultAsync();
 
             return emailJaExiste != null ? false : true;
+        }
+
+        public async Task<bool> ValidarSeExisteAlgumUsuarioCadastrado()
+        {
+            bool hasUsers = await _modManutencoesContext.Usuarios.AnyAsync();
+
+            return hasUsers;
         }
     }
 }

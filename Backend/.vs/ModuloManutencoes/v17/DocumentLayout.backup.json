@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\m\u00F3dulo de manuten\u00E7\u00F5es\\backend\\modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\m\u00F3dulo de manuten\u00E7\u00F5es\\backend\\modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\m\u00F3dulo de manuten\u00E7\u00F5es\\backend\\modulomanutencoes\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\m\u00F3dulo de manuten\u00E7\u00F5es\\backend\\modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\m\u00F3dulo de manuten\u00E7\u00F5es\\backend\\modulomanutencoes\\dtos\\logindtos\\dadossessaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\dtos\\logindtos\\dadossessaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\appsettings.json",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\appsettings.json",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\appsettings.json",
+              "RelativeToolTip": "ModuloManutencoes\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-16T03:13:55.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAiwFwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T01:49:41.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DadosSessaoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Dtos\\LoginDtos\\DadosSessaoDTO.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Dtos\\LoginDtos\\DadosSessaoDTO.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Dtos\\LoginDtos\\DadosSessaoDTO.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Dtos\\LoginDtos\\DadosSessaoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T00:34:56.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Program.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Program.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Program.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:22:27.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutenticacaoService.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Services\\AutenticacaoService.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\AutenticacaoService.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\M\u00F3dulo de Manuten\u00E7\u00F5es\\Backend\\ModuloManutencoes\\Services\\AutenticacaoService.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Services\\AutenticacaoService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:22:27.085Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
