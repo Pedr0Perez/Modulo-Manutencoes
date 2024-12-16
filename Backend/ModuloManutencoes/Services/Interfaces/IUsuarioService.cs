@@ -10,5 +10,6 @@ namespace ModuloManutencoes.Interfaces.Usuarios
         Task<MensagemAoClienteDTO> CadastrarUsuario(UsuarioDTO usuario);
         Task<MensagemAoClienteDTO> AtualizarUsuario(int userId, UsuarioDTO usuario);
         Task<MensagemAoClienteDTO> ApagarUsuario(int userId);
+        Task CadastrarUsuarioSuperAdministradorCasoNaoExistaNenhum();
     }
 }

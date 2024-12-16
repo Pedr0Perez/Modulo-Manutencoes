@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Dtos.UsuarioDtos;
 using ModuloManutencoes.Interfaces.Usuarios;
@@ -7,6 +8,7 @@ namespace ModuloManutencoes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;

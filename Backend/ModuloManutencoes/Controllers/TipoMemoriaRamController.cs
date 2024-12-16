@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModuloManutencoes.Dtos.MemoriaDtos;
 using ModuloManutencoes.Dtos.MensagemDtos;
@@ -8,6 +9,7 @@ namespace ModuloManutencoes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize("Bearer")]
     public class TipoMemoriaRamController : ControllerBase
     {
         private readonly ITipoMemoriaRamService _tipoMemoriaRamService;

@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/ModuloManutencoes/swagger-ui/SwaggerDark.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui\SwaggerDark.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Zqsu8le9HB7O\u002BWhThkFsVKteI/iVk6DT6iTrWdBug10="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"50277"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Zqsu8le9HB7O\u002BWhThkFsVKteI/iVk6DT6iTrWdBug10=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Jul 2023 09:35:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModuloManutencoes/swagger-ui/SwaggerDark.user.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui\SwaggerDark.user.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oDcG2iU3MqZjlKcZYHgl\u002BQXU1i2XhLK/3/C5WPW1MZg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"50759"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oDcG2iU3MqZjlKcZYHgl\u002BQXU1i2XhLK/3/C5WPW1MZg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Jul 2023 09:35:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModuloManutencoes/swagger-ui/SwaggerDark.user.ou1t1mphb2.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui\SwaggerDark.user.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ou1t1mphb2"},{"Name":"integrity","Value":"sha256-oDcG2iU3MqZjlKcZYHgl\u002BQXU1i2XhLK/3/C5WPW1MZg="},{"Name":"label","Value":"_content/ModuloManutencoes/swagger-ui/SwaggerDark.user.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"50759"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oDcG2iU3MqZjlKcZYHgl\u002BQXU1i2XhLK/3/C5WPW1MZg=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Jul 2023 09:35:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ModuloManutencoes/swagger-ui/SwaggerDark.yyn546jfj0.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\swagger-ui\SwaggerDark.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yyn546jfj0"},{"Name":"integrity","Value":"sha256-Zqsu8le9HB7O\u002BWhThkFsVKteI/iVk6DT6iTrWdBug10="},{"Name":"label","Value":"_content/ModuloManutencoes/swagger-ui/SwaggerDark.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"50277"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Zqsu8le9HB7O\u002BWhThkFsVKteI/iVk6DT6iTrWdBug10=\u0022"},{"Name":"Last-Modified","Value":"Sun, 16 Jul 2023 09:35:16 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

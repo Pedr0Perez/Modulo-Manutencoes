@@ -10,12 +10,17 @@ using ModuloManutencoes.Repositories;
 using ModuloManutencoes.Repositories.Interfaces;
 using ModuloManutencoes.Services;
 using ModuloManutencoes.Services.Interfaces;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System;
 
 namespace ModuloManutencoes
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +29,81 @@ namespace ModuloManutencoes
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
+                    "Digite 'Bearer' [espaço] e em seguida token no campo abaixo.\r\n\r\n" +
+                    "Exemplo: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
+
+            string jwtIssuer = builder.Configuration.GetSection("JwtConfiguration")["Issuer"];
+            string jwtKey = builder.Configuration.GetSection("JwtConfiguration")["SecretJwtKey"];
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtIssuer,
+                    ValidAudience = jwtIssuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+                };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnChallenge = context =>
+                    {
+                        if (context.AuthenticateFailure?.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.StatusCode = 440;
+                            context.Response.ContentType = "application/json";
+                            return context.Response.WriteAsync("{\"error\":\"Token expired\"}");
+                        }
+
+                        context.Response.StatusCode = 401;
+                        context.Response.ContentType = "application/json";
+                        return context.Response.WriteAsync("{\"error\":\"Unauthorized\"}");
+                    }
+                };
+            });
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Bearer", policy =>
+                {
+                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
+                    policy.RequireAuthenticatedUser();
+                });
+            });
 
             string conexaoDb = builder.Configuration.GetSection("ConnectionStrings")["ConnectionDb"];
 
@@ -75,7 +154,18 @@ namespace ModuloManutencoes
             //Service da autenticação
             builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 
+
+
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                // Resolve o serviço e chama o método
+                var userService = services.GetRequiredService<IUsuarioService>();
+                await userService.CadastrarUsuarioSuperAdministradorCasoNaoExistaNenhum();
+            }
 
             string ambiente = app.Configuration.GetSection("Environment")["Dev"];
 
@@ -97,6 +187,7 @@ namespace ModuloManutencoes
             app.UseMiddleware<TratamentoExcecoesMiddleware>();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             //Configurando o CORS
             app.UseCors(c =>
