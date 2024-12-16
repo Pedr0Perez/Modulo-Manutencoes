@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "swagger-ui/SwaggerDark.css",
+      "AssetFile": "swagger-ui/SwaggerDark.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50277"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.user.css",
+      "AssetFile": "swagger-ui/SwaggerDark.user.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50759"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.user.ou1t1mphb2.css",
+      "AssetFile": "swagger-ui/SwaggerDark.user.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50759"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ou1t1mphb2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg="
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui/SwaggerDark.user.css"
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.yyn546jfj0.css",
+      "AssetFile": "swagger-ui/SwaggerDark.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50277"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yyn546jfj0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10="
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui/SwaggerDark.css"
+        }
+      ]
+    }
+  ]
+}

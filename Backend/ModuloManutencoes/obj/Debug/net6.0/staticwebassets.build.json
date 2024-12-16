@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "Hnl6ZqI+SehP2w6ebLT/rLTECdbmuO39UdzQ9SWwO3Q=",
+  "Source": "ModuloManutencoes",
+  "BasePath": "_content/ModuloManutencoes",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ModuloManutencoes\\wwwroot",
+      "Source": "ModuloManutencoes",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "SourceId": "ModuloManutencoes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "RelativePath": "swagger-ui/SwaggerDark#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yyn546jfj0",
+      "Integrity": "Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\SwaggerDark.css"
+    },
+    {
+      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "SourceId": "ModuloManutencoes",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "BasePath": "_content/ModuloManutencoes",
+      "RelativePath": "swagger-ui/SwaggerDark.user#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ou1t1mphb2",
+      "Integrity": "oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-ui\\SwaggerDark.user.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "swagger-ui/SwaggerDark.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50277"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.user.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50759"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.user.ou1t1mphb2.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50759"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ou1t1mphb2"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui/SwaggerDark.user.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oDcG2iU3MqZjlKcZYHgl+QXU1i2XhLK/3/C5WPW1MZg="
+        }
+      ]
+    },
+    {
+      "Route": "swagger-ui/SwaggerDark.yyn546jfj0.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50277"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Jul 2023 09:35:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yyn546jfj0"
+        },
+        {
+          "Name": "label",
+          "Value": "swagger-ui/SwaggerDark.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Zqsu8le9HB7O+WhThkFsVKteI/iVk6DT6iTrWdBug10="
+        }
+      ]
+    }
+  ]
+}

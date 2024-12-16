@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "Server=PC-AORUS\SQLEXPRESS;Database=MODMANUTENCOES;User Id=sa;Password=root;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -f -c MODMANUTENCOESContext

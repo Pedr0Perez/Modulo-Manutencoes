@@ -1,0 +1,95 @@
+USE MODMANUTENCOES;
+
+-------------------------------------------------------------------
+
+--Tabela USUARIOS
+
+CREATE TABLE USUARIOS(
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	firstName VARCHAR(25) NOT NULL,
+	lastName VARCHAR(50) NOT NULL,
+	mail VARCHAR(320) NOT NULL,
+	mail2 VARCHAR(320),
+	password VARCHAR(256) NOT NULL,
+	birthDate DATETIME,
+	gender CHAR(1) NOT NULL,
+	country VARCHAR(64),
+	city VARCHAR(64),
+	state VARCHAR(64),
+	active CHAR(1) NOT NULL,
+	admin CHAR(1) NOT NULL,
+	superAdmin CHAR(1) NOT NULL,
+	CONSTRAINT UQ_mail_unico UNIQUE (mail),
+);
+
+-------------------------------------------------------------------
+
+--Tabela DISPTYPE
+
+CREATE TABLE DISPTYPE (
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	type_disp VARCHAR(50),
+	active CHAR(1) NOT NULL,
+);
+
+-------------------------------------------------------------------
+
+--Tabela TABLE RAMTYPE
+
+CREATE TABLE RAMTYPE (
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	type_name VARCHAR(50),
+	active CHAR(1) NOT NULL,
+);
+
+-------------------------------------------------------------------
+
+--Tabela TABLE VRAMTYPE
+
+CREATE TABLE VRAMTYPE (
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	type_name VARCHAR(50),
+	active CHAR(1) NOT NULL,
+);
+
+-------------------------------------------------------------------
+
+--Tabela DISPOSITIVOS
+
+CREATE TABLE DISPOSITIVOS (
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	disp_type INT NOT NULL,
+	disp_name VARCHAR(75) NOT NULL,
+	cpu VARCHAR(50),
+	gpu VARCHAR(50),
+	mb VARCHAR(50),
+	psu VARCHAR(50),
+	storage INT, -- deve ser especificado em GB
+	ram_qtd INT, -- deve ser especificado em GB
+	ram_type INT,
+	vram_qtd INT, -- deve ser especificado em GB
+	vram_type INT,
+	note VARCHAR(120),
+	active CHAR(1) NOT NULL,
+	FOREIGN KEY (disp_type) REFERENCES DISPTYPE(id),
+	FOREIGN KEY (ram_type) REFERENCES RAMTYPE(id),
+	FOREIGN KEY (vram_type) REFERENCES VRAMTYPE(id),
+);
+
+-------------------------------------------------------------------
+
+--Tabela MANUTENCOES
+
+CREATE TABLE MANUTENCOES (
+	id INT IDENTITY(1, 1) PRIMARY KEY,
+	disp_id INT NOT NULL,
+	user_id INT NOT NULL,
+	it_ended CHAR(1) NOT NULL,
+	date_create DATETIME NOT NULL,
+	date_ended DATETIME,
+	description VARCHAR(256),
+	FOREIGN KEY (user_id) REFERENCES USUARIOS(id),
+	FOREIGN KEY (disp_id) REFERENCES DISPOSITIVOS(id),
+);
+
+-------------------------------------------------------------------
