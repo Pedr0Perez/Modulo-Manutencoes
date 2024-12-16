@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hnl6ZqI+SehP2w6ebLT/rLTECdbmuO39UdzQ9SWwO3Q=",
+  "Hash": "67/pzGEyfPLBwN4in3qbQZ52aKV5xvgaURGJSB62JYc=",
   "Source": "ModuloManutencoes",
   "BasePath": "_content/ModuloManutencoes",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ModuloManutencoes\\wwwroot",
       "Source": "ModuloManutencoes",
-      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\",
       "BasePath": "_content/ModuloManutencoes",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
       "SourceId": "ModuloManutencoes",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\",
       "BasePath": "_content/ModuloManutencoes",
       "RelativePath": "swagger-ui/SwaggerDark#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\swagger-ui\\SwaggerDark.css"
     },
     {
-      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "Identity": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
       "SourceId": "ModuloManutencoes",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\",
       "BasePath": "_content/ModuloManutencoes",
       "RelativePath": "swagger-ui/SwaggerDark.user#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -62,7 +62,7 @@
   "Endpoints": [
     {
       "Route": "swagger-ui/SwaggerDark.css",
-      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -99,7 +99,7 @@
     },
     {
       "Route": "swagger-ui/SwaggerDark.user.css",
-      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -136,7 +136,7 @@
     },
     {
       "Route": "swagger-ui/SwaggerDark.user.ou1t1mphb2.css",
-      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "Route": "swagger-ui/SwaggerDark.yyn546jfj0.css",
-      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "AssetFile": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
       "Selectors": [],
       "ResponseHeaders": [
         {

@@ -4,6 +4,6 @@
     {
         Task<bool> ValidarSeUsuarioExiste(int userId);
         Task<bool> ValidarEmailDisponivel(string email);
-        Task<bool> ValidarSeExisteAlgumUsuarioCadastrado();
+        Task<bool> ValidarSeExisteUsuarioSuperAdminCadastrado();
     }
 }

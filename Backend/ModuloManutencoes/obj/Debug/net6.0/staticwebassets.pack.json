@@ -1,11 +1,11 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
+      "Id": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.css",
       "PackagePath": "staticwebassets\\swagger-ui\\SwaggerDark.css"
     },
     {
-      "Id": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
+      "Id": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\wwwroot\\swagger-ui\\SwaggerDark.user.css",
       "PackagePath": "staticwebassets\\swagger-ui\\SwaggerDark.user.css"
     },
     {

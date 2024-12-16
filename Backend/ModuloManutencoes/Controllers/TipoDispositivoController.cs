@@ -9,7 +9,7 @@ namespace ModuloManutencoes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize("Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class TipoDispositivoController : ControllerBase
     {
         private readonly ITipoDispositivoService _tipoDispositivoService;
