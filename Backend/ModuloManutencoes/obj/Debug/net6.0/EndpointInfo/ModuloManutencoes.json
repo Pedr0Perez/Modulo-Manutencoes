@@ -1582,7 +1582,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\nDigite 'Bearer' [espaço] e em seguida token no campo abaixo.\r\n\r\nExemplo: 'Bearer 12345abcdef'",
+        "description": "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\nDigite Bearer e em seguida o token no campo abaixo.\r\n\r\nExemplo: Bearer 12345abcdef",
         "name": "Authorization",
         "in": "header"
       }

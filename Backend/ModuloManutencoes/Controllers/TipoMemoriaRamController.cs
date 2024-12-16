@@ -9,7 +9,7 @@ namespace ModuloManutencoes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize("Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class TipoMemoriaRamController : ControllerBase
     {
         private readonly ITipoMemoriaRamService _tipoMemoriaRamService;

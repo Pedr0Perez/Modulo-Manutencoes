@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rdYRl2zdaio=",
+  "dgSpecHash": "FISTB/8DGyc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
+  "projectFilePath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vidad\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vidad\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.35\\microsoft.aspnetcore.authentication.jwtbearer.6.0.35.nupkg.sha512",

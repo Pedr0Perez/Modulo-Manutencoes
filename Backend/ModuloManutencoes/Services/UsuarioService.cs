@@ -86,9 +86,9 @@ namespace ModuloManutencoes.Services
             };
         }
 
-        public async Task CadastrarUsuarioSuperAdministradorCasoNaoExistaNenhum() 
+        public async Task CadastrarUsuarioSuperAdministradorCasoNaoExista() 
         {
-            bool validarSeExisteAlgumUsuario = await _usuarioRepositoryValidation.ValidarSeExisteAlgumUsuarioCadastrado();
+            bool validarSeExisteAlgumUsuario = await _usuarioRepositoryValidation.ValidarSeExisteUsuarioSuperAdminCadastrado();
 
             if (!validarSeExisteAlgumUsuario)
             {

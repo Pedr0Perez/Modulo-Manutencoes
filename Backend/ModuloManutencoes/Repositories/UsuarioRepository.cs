@@ -147,11 +147,13 @@ namespace ModuloManutencoes.Repositories
             return emailJaExiste != null ? false : true;
         }
 
-        public async Task<bool> ValidarSeExisteAlgumUsuarioCadastrado()
+        public async Task<bool> ValidarSeExisteUsuarioSuperAdminCadastrado()
         {
-            bool hasUsers = await _modManutencoesContext.Usuarios.AnyAsync();
+            bool hasSuperAdmin = await _modManutencoesContext.Usuarios
+                            .Where(u => u.SuperAdmin == "Y")
+                            .AnyAsync();
 
-            return hasUsers;
+            return hasSuperAdmin;
         }
     }
 }

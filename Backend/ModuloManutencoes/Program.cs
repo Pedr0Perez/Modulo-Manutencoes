@@ -34,8 +34,8 @@ namespace ModuloManutencoes
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
-                    "Digite 'Bearer' [espaço] e em seguida token no campo abaixo.\r\n\r\n" +
-                    "Exemplo: 'Bearer 12345abcdef'",
+                    $"Digite {"Bearer"} e em seguida o token no campo abaixo.\r\n\r\n" +
+                    $"Exemplo: {"Bearer 12345abcdef"}",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
@@ -84,7 +84,7 @@ namespace ModuloManutencoes
                     {
                         if (context.AuthenticateFailure?.GetType() == typeof(SecurityTokenExpiredException))
                         {
-                            context.Response.StatusCode = 440;
+                            context.Response.StatusCode = 498;
                             context.Response.ContentType = "application/json";
                             return context.Response.WriteAsync("{\"error\":\"Token expired\"}");
                         }
@@ -94,15 +94,6 @@ namespace ModuloManutencoes
                         return context.Response.WriteAsync("{\"error\":\"Unauthorized\"}");
                     }
                 };
-            });
-
-            builder.Services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Bearer", policy =>
-                {
-                    policy.AuthenticationSchemes.Add(JwtBearerDefaults.AuthenticationScheme);
-                    policy.RequireAuthenticatedUser();
-                });
             });
 
             string conexaoDb = builder.Configuration.GetSection("ConnectionStrings")["ConnectionDb"];
@@ -155,17 +146,8 @@ namespace ModuloManutencoes
             builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 
 
-
+            //Configurações da aplicação
             var app = builder.Build();
-
-            using (var scope = app.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-
-                // Resolve o serviço e chama o método
-                var userService = services.GetRequiredService<IUsuarioService>();
-                await userService.CadastrarUsuarioSuperAdministradorCasoNaoExistaNenhum();
-            }
 
             string ambiente = app.Configuration.GetSection("Environment")["Dev"];
 
@@ -196,8 +178,17 @@ namespace ModuloManutencoes
                 c.AllowAnyOrigin();
             });
 
-
             app.MapControllers();
+
+            //Criando um usuário Super Administrador caso NÃO exista
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                // Resolve o serviço e chama o método
+                var userService = services.GetRequiredService<IUsuarioService>();
+                await userService.CadastrarUsuarioSuperAdministradorCasoNaoExista();
+            }
 
             app.Run();
         }

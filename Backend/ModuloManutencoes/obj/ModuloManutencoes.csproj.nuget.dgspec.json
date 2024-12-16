@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {}
+    "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {
+    "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
+        "projectUniqueName": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
         "projectName": "ModuloManutencoes",
-        "projectPath": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
+        "projectPath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
         "packagesPath": "C:\\Users\\vidad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vidad\\Documents\\GIT\\Módulo de Manutenções\\Backend\\ModuloManutencoes\\obj\\",
+        "outputPath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
