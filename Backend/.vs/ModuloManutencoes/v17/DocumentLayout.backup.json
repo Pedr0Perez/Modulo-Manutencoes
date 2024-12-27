@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\appsettings.json",
               "RelativeDocumentMoniker": "ModuloManutencoes\\appsettings.json",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\appsettings.json",
               "RelativeToolTip": "ModuloManutencoes\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-16T15:18:11.502Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "ModuloManutencoes\\Repositories\\UsuarioRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:10:57.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T15:10:57.833Z"
             },
             {
               "$type": "Document",
@@ -64,21 +63,19 @@
               "RelativeToolTip": "ModuloManutencoes\\Services\\UsuarioService.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAIwA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T15:10:46.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-16T15:10:46.79Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Program.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Program.cs",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Program.cs",
               "RelativeToolTip": "ModuloManutencoes\\Program.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAgwKkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T03:22:27.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T03:22:27.101Z"
             }
           ]
         }
