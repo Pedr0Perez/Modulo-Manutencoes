@@ -145,6 +145,8 @@ namespace ModuloManutencoes
             //Service da autenticação
             builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
 
+            builder.Services.AddHttpContextAccessor();
+
 
             //Configurações da aplicação
             var app = builder.Build();

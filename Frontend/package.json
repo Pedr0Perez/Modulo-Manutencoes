@@ -1,7 +1,7 @@
 {
   "name": "manutencao",
   "private": true,
-  "version": "alpha1.0.37",
+  "version": "alpha1.0.42",
   "type": "module",
   "scripts": {
     "dev": "vite",

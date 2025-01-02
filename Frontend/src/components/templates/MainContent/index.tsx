@@ -1,5 +1,5 @@
 import { memo } from "react";
-import IChildrenProps from "../../interfaces/DefaultPage/IChildrenProps";
+import IChildrenProps from "../../../interfaces/DefaultPage/IChildrenProps";
 import "./style/MainContent.css";
 
 const MainContent = ({ children }: IChildrenProps): JSX.Element => {
