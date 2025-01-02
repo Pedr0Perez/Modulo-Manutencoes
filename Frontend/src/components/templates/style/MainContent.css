@@ -1,0 +1,8 @@
+.content-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem !important;
+  height: 500px;
+}
