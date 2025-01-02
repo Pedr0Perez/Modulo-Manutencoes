@@ -1,4 +1,4 @@
-import DefaultPageCard from "../../default/DefaultPageCard/DefaultPageCard";
+import DefaultPageCard from "../../../default/DefaultPageCard/DefaultPageCard";
 import { memo } from "react";
 import { Button } from "primereact/button";
 

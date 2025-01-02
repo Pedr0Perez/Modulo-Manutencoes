@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Card } from "primereact/card";
-import IDefaultPageCard from "../interface/IDefaultPageCard";
+import IDefaultPageCard from "./interface/IDefaultPageCard";
 import "./style/DefaultPageCard.css";
 import { Divider } from "primereact/divider";
 
