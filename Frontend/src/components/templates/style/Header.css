@@ -1,0 +1,22 @@
+header.default-header {
+  height: 4.5rem;
+  background-color: var(--header-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--header-border-color);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.sis-logo-header-container {
+  height: 3rem;
+  margin-left: 0.5rem;
+}
+
+.sis-logo-header-link,
+.sis-logo-header {
+  height: 100%;
+  display: block;
+  width: max-content;
+}
