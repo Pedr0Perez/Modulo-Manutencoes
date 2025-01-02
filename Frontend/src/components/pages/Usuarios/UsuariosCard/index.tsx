@@ -1,5 +1,5 @@
 import { memo } from "react";
-import DefaultPageCard from "../../default/DefaultPageCard/DefaultPageCard";
+import DefaultPageCard from "../../../default/DefaultPageCard/DefaultPageCard";
 
 const UsuariosCard = (): JSX.Element => {
   return <DefaultPageCard title="Usuários"></DefaultPageCard>;
