@@ -1,15 +1,15 @@
 import { memo } from "react";
 import "./style/Header.css";
-import LogoSis from "../../assets/logo-sis.png";
-import { useNavigate } from "react-router-dom";
-import "./style/VarTemplate.css";
+import LogoSis from "../../../assets/logo-sis.png";
+import { NavigateFunction, useNavigate } from "react-router-dom";
+import "../style/VarTemplate.css";
 
 const Header = (): JSX.Element => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   const anchorClick = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  ): void => {
     event.preventDefault();
     navigate("/home");
   };

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Net;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ModuloManutencoes.Dtos.LoginDtos;
 using ModuloManutencoes.Services.Interfaces;
@@ -10,10 +11,12 @@ namespace ModuloManutencoes.Controllers
     public class AutenticacaoController : ControllerBase
     {
         private readonly IAutenticacaoService _autenticacaoService;
-
-        public AutenticacaoController(IAutenticacaoService autenticacaoService)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        
+        public AutenticacaoController(IAutenticacaoService autenticacaoService, IHttpContextAccessor httpContextAccessor)
         {
             _autenticacaoService = autenticacaoService;
+           _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpPost]
