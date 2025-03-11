@@ -134,60 +134,56 @@ namespace ModuloManutencoes.Repositories
 
         public async Task<bool> ValidarSeJaExisteDispositivoComEsteNome(string nome) //Para adicionar
         {
-            Dispositivo? validar = await _modManutencoesContext.Dispositivo
+            bool validar = await _modManutencoesContext.Dispositivo
                                     .Where(d => d.Active == "Y" && d.DispName == nome)
-                                    .FirstOrDefaultAsync();
+                                    .AnyAsync();
 
-            return validar == null;
+            return !validar;
         }
 
         public async Task<bool> ValidarSeJaExisteDispositivoComEsteNome(int id, string nome) //Para atualizar
         {
-            Dispositivo? validar = await _modManutencoesContext.Dispositivo
+            bool validar = await _modManutencoesContext.Dispositivo
                                     .Where(d => d.Active == "Y" && d.DispName == nome && d.Id != id)
-                                    .FirstOrDefaultAsync();
+                                    .AnyAsync();
 
-            return validar == null;
+            return validar;
         }
 
         public async Task<bool> ValidarSeDispositivoExiste(int id)
         {
-            Dispositivo? validar = await _modManutencoesContext.Dispositivo
+            bool validar = await _modManutencoesContext.Dispositivo
                                     .Where(d => d.Active == "Y" && d.Id == id)
-                                    .FirstOrDefaultAsync();
+                                    .AnyAsync();
 
-            return validar != null;
+            return validar;
         }
 
         public async Task<bool> ValidarSeTipoDispositivoExiste(int id)
         {
-            Disptype? validar = await _modManutencoesContext.Disptype
+            bool validar = await _modManutencoesContext.Disptype
                                     .Where(t => t.Active == "Y" && t.Id == id)
-                                    .FirstOrDefaultAsync();
+                                    .AnyAsync();
 
-            return validar != null;
+            return validar;
         }
 
         public async Task<bool> ValidarSeTipoRamExiste(int? id)
         {
-            if (id == null) return true;
-
-            Ramtype? validar = await _modManutencoesContext.Ramtype
+            bool validar = await _modManutencoesContext.Ramtype
                                 .Where(t => t.Active == "Y" && t.Id == id)
-                                .FirstOrDefaultAsync();
+                                .AnyAsync();
 
-            return validar != null;
+            return validar;
         }
 
         public async Task<bool> ValidarSeTipoVramExiste(int? id)
         {
-            if (id == null) return true;
-
-            Vramtype? validar = await _modManutencoesContext.Vramtype
+            bool validar = await _modManutencoesContext.Vramtype
                                  .Where(t => t.Active == "Y" && t.Id == id)
-                                 .FirstOrDefaultAsync();
+                                 .AnyAsync();
 
-            return validar != null;
+            return validar;
         }
     }
 }

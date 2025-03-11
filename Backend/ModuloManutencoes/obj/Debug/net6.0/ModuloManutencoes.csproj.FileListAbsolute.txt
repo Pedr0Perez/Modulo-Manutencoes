@@ -393,3 +393,5 @@ C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\obj\De
 C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\obj\Debug\net6.0\ModuloManutencoes.pdb
 C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\obj\Debug\net6.0\ModuloManutencoes.genruntimeconfig.cache
 C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\obj\Debug\net6.0\ref\ModuloManutencoes.dll
+C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\bin\Debug\net6.0\ModuloManutencoes.xml
+C:\Users\vidad\Documents\GIT\Modulo-Manutencoes\Backend\ModuloManutencoes\obj\Debug\net6.0\ModuloManutencoes.xml

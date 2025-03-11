@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ModuloManutencoes</name>
+    </assembly>
+    <members>
+        <member name="M:ModuloManutencoes.Controllers.AutenticacaoController.RealizarAutenticacao(ModuloManutencoes.Dtos.LoginDtos.LoginDTO)">
+            <summary>
+            Realiza a autenticação do usuário
+            </summary>
+            <param name="login"></param>
+            <returns>Informações do usuário e token de acesso</returns>
+            <response code="200">Usuário autenticado com sucesso.</response>
+            <response code="401">Usuário não autenticado.</response>
+        </member>
+        <member name="M:ModuloManutencoes.Controllers.DispositivoController.RetornarTodosDispositivos">
+            <summary>
+            Retorna todos dispositivos cadastrados
+            </summary>
+            <param name="dispositivo"></param>
+            <returns>Todos dispositivos</returns>
+            <response code="200">Dispositivos retornados com sucesso.</response>
+            <response code="401">Sem autorização.</response>
+        </member>
+    </members>
+</doc>

@@ -10,7 +10,9 @@
         "tags": [
           "Autenticacao"
         ],
+        "summary": "Realiza a autenticação do usuário",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -31,7 +33,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Usuário autenticado com sucesso.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -49,6 +51,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Usuário não autenticado."
           }
         }
       }
@@ -58,9 +63,10 @@
         "tags": [
           "Dispositivo"
         ],
+        "summary": "Retorna todos dispositivos cadastrados",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Dispositivos retornados com sucesso.",
             "content": {
               "text/plain": {
                 "schema": {
@@ -87,6 +93,9 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Sem autorização."
           }
         }
       },

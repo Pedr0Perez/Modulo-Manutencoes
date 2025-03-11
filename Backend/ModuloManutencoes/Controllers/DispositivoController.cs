@@ -18,6 +18,13 @@ namespace ModuloManutencoes.Controllers
             _dispositivoService = dispositivoService;
         }
 
+        /// <summary>
+        /// Retorna todos dispositivos cadastrados
+        /// </summary>
+        /// <param name="dispositivo"></param>
+        /// <returns>Todos dispositivos</returns>
+        /// <response code="200">Dispositivos retornados com sucesso.</response>
+        /// <response code="401">Sem autorização.</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DispositivoGetDTO>>> RetornarTodosDispositivos()
         {

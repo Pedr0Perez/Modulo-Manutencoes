@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FISTB/8DGyc=",
+  "dgSpecHash": "qZFsqKQ+/AI=",
   "success": true,
   "projectFilePath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\ModuloManutencoes.csproj",
   "expectedPackageFiles": [
@@ -66,28 +66,11 @@
     "C:\\Users\\vidad\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\vidad\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
     "C:\\Users\\vidad\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
-    "C:\\Users\\vidad\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\vidad\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\vidad\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\vidad\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\vidad\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\vidad\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Extensions.Caching.Memory' 6.0.1 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1904",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "O pacote 'System.Drawing.Common' 4.7.0 tem uma crítico vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-rxg9-xrhp-64gj",
-      "libraryId": "System.Drawing.Common",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

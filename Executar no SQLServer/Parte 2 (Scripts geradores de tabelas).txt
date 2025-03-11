@@ -18,7 +18,8 @@ CREATE TABLE USUARIOS(
 	state VARCHAR(64),
 	active CHAR(1) NOT NULL,
 	CONSTRAINT UQ_mail_unico UNIQUE (mail),
-	
+	admin VARCHAR(64),
+	superAdmin VARCHAR(64),
 );
 
 -------------------------------------------------------------------
