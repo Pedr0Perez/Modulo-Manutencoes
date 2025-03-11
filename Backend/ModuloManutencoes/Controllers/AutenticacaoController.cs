@@ -18,7 +18,13 @@ namespace ModuloManutencoes.Controllers
             _autenticacaoService = autenticacaoService;
            _httpContextAccessor = httpContextAccessor;
         }
-
+        /// <summary>
+        /// Realiza a autenticação do usuário
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns>Informações do usuário e token de acesso</returns>
+        /// <response code="200">Usuário autenticado com sucesso.</response>
+        /// <response code="401">Usuário não autenticado.</response>
         [HttpPost]
         public async Task<ActionResult<DadosSessaoDTO>> RealizarAutenticacao([FromBody] LoginDTO login)
         {

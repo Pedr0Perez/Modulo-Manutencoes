@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
+using System.Reflection;
 
 namespace ModuloManutencoes
 {
@@ -31,6 +32,11 @@ namespace ModuloManutencoes
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
+                //Configurando o swagger para ler o XML gerado dos comentários
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Description = "JWT Authorization Header - utilizado com Bearer Authentication.\r\n\r\n" +
@@ -141,6 +147,7 @@ namespace ModuloManutencoes
 
             //Service do dispositivo
             builder.Services.AddScoped<IDispositivoService, DispositivoService>();
+            builder.Services.AddScoped<IValidadorDispositivoService, ValidadorDispositivoService>();
 
             //Service da autenticação
             builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
