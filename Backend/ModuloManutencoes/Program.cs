@@ -118,6 +118,7 @@ namespace ModuloManutencoes
             //Repository do tipo de dispositivo
             builder.Services.AddScoped<ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO>, TipoDispositivoRepository>();
             builder.Services.AddScoped<ITipoDispositivoRepository, TipoDispositivoRepository>();
+            builder.Services.AddScoped<IValidadorTipoDispositivoService, ValidadorTipoDispositivoService>();
 
             //Repository do tipo de memória ram
             builder.Services.AddScoped<ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO>, TipoMemoriaRamRepository>();

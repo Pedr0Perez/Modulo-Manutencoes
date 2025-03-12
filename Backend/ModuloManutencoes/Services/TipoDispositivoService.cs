@@ -1,6 +1,5 @@
 ﻿using ModuloManutencoes.Dtos.DispositivoDtos;
 using ModuloManutencoes.Dtos.MensagemDtos;
-using ModuloManutencoes.Exceptions.TipoDispositivoExceptions;
 using ModuloManutencoes.Interfaces;
 using ModuloManutencoes.Repositories.Interfaces;
 using ModuloManutencoes.Services.Interfaces;
@@ -11,22 +10,26 @@ namespace ModuloManutencoes.Services
     {
         private readonly ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO> _tipoDispositivoCrud;
         private readonly ITipoDispositivoRepository _tipoDispositivoValidation;
+        private readonly IValidadorTipoDispositivoService _validadorService;
 
-        public TipoDispositivoService(ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO> tipoDispositivoCrud, ITipoDispositivoRepository tipoDispositivoValidation)
+        public TipoDispositivoService(ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO> tipoDispositivoCrud, ITipoDispositivoRepository tipoDispositivoValidation, IValidadorTipoDispositivoService validadorService)
         {
             _tipoDispositivoCrud = tipoDispositivoCrud;
             _tipoDispositivoValidation = tipoDispositivoValidation;
+            _validadorService = validadorService;
         }
 
         public async Task<IEnumerable<TipoDispositivoGetDTO>> RetornarTodosTiposDispositivos()
         {
             IEnumerable<TipoDispositivoGetDTO> listaTipoDispositivo = await _tipoDispositivoCrud.GetAll();
+
             return listaTipoDispositivo;
         }
 
         public async Task<TipoDispositivoGetDTO?> RetornarTipoDispositivo(int idTipoDisp)
         {
             TipoDispositivoGetDTO? tipoDispositivo = await _tipoDispositivoCrud.GetById(idTipoDisp);
+
             return tipoDispositivo;
         }
 
@@ -41,15 +44,11 @@ namespace ModuloManutencoes.Services
             };
         }
 
-        public async Task<MensagemAoClienteDTO> AtualizarTipoDispositivo(int idTipoDisp, TipoDispositivoDTO tipoDispositivo)
+        public async Task<MensagemAoClienteDTO> AtualizarTipoDispositivo(int id, TipoDispositivoDTO tipoDispositivo)
         {
-            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeTipoDispositivoExiste(idTipoDisp);
-            if (!validarSeTipoDispositivoExiste)
-            {
-                throw new TipoDispositivoNaoEncontradoException();
-            }
+            await _validadorService.ValidarTipoDispositivo(id);
 
-            await _tipoDispositivoCrud.Update(idTipoDisp, tipoDispositivo);
+            await _tipoDispositivoCrud.Update(id, tipoDispositivo);
 
             return new MensagemAoClienteDTO
             {
@@ -57,15 +56,11 @@ namespace ModuloManutencoes.Services
             };
         }
 
-        public async Task<MensagemAoClienteDTO> ApagarTipoDispositivo(int idTipoDisp)
+        public async Task<MensagemAoClienteDTO> ApagarTipoDispositivo(int id)
         {
-            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeTipoDispositivoExiste(idTipoDisp);
-            if (!validarSeTipoDispositivoExiste)
-            {
-                throw new TipoDispositivoNaoEncontradoException();
-            }
+            await _validadorService.ValidarTipoDispositivo(id);
 
-            await _tipoDispositivoCrud.Delete(idTipoDisp);
+            await _tipoDispositivoCrud.Delete(id);
 
             return new MensagemAoClienteDTO
             {
