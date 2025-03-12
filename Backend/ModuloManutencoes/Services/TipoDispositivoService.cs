@@ -32,32 +32,45 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> AdicionarTipoDispositivo(TipoDispositivoDTO tipoDispositivo)
         {
-            MensagemAoClienteDTO adicionarDispositivo = await _tipoDispositivoCrud.Create(tipoDispositivo);
-            return adicionarDispositivo;
+            await _tipoDispositivoCrud.Create(tipoDispositivo);
+
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de dispositivo adicionado com sucesso.",
+                Data = tipoDispositivo
+            };
         }
 
         public async Task<MensagemAoClienteDTO> AtualizarTipoDispositivo(int idTipoDisp, TipoDispositivoDTO tipoDispositivo)
         {
-            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeDispositivoExiste(idTipoDisp);
+            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeTipoDispositivoExiste(idTipoDisp);
             if (!validarSeTipoDispositivoExiste)
             {
                 throw new TipoDispositivoNaoEncontradoException();
             }
 
-            MensagemAoClienteDTO atualizarDispositivo = await _tipoDispositivoCrud.Update(idTipoDisp, tipoDispositivo);
-            return atualizarDispositivo;
+            await _tipoDispositivoCrud.Update(idTipoDisp, tipoDispositivo);
+
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de dispositivo atualizado com sucesso."
+            };
         }
 
         public async Task<MensagemAoClienteDTO> ApagarTipoDispositivo(int idTipoDisp)
         {
-            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeDispositivoExiste(idTipoDisp);
+            bool validarSeTipoDispositivoExiste = await _tipoDispositivoValidation.ValidarSeTipoDispositivoExiste(idTipoDisp);
             if (!validarSeTipoDispositivoExiste)
             {
                 throw new TipoDispositivoNaoEncontradoException();
             }
 
-            MensagemAoClienteDTO apagarDispositivo = await _tipoDispositivoCrud.Delete(idTipoDisp);
-            return apagarDispositivo;
+            await _tipoDispositivoCrud.Delete(idTipoDisp);
+
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de dispositivo apagado com sucesso."
+            };
         }
     }
 }

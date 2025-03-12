@@ -40,9 +40,13 @@ namespace ModuloManutencoes.Services
                 throw new DescricaoTipoMemoriaRamJaExisteException();
             }
 
-            MensagemAoClienteDTO adicionarTipoRam = await _tipoMemoriaRamCrud.Create(tipoMemoriaRam);
+            await _tipoMemoriaRamCrud.Create(tipoMemoriaRam);
 
-            return adicionarTipoRam;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória RAM adicionado com sucesso.",
+                Data = tipoMemoriaRam
+            };
         }
 
         public async Task<MensagemAoClienteDTO> AtualizarTipoMemoriaRam(int id, TipoMemoriaRamDTO tipoMemoriaRam)
@@ -60,9 +64,12 @@ namespace ModuloManutencoes.Services
                 throw new DescricaoTipoMemoriaRamJaExisteException();
             }
 
-            MensagemAoClienteDTO atualizarTipoRam = await _tipoMemoriaRamCrud.Update(id, tipoMemoriaRam);
+            await _tipoMemoriaRamCrud.Update(id, tipoMemoriaRam);
 
-            return atualizarTipoRam;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória RAM atualizado com sucesso."
+            };
         }
 
         public async Task<MensagemAoClienteDTO> ApagarTipoMemoriaRam(int id)
@@ -74,8 +81,12 @@ namespace ModuloManutencoes.Services
                 throw new TipoMemoriaRamNaoEncontradoException();
             }
 
-            MensagemAoClienteDTO apagarTipoRam = await _tipoMemoriaRamCrud.Delete(id);
-            return apagarTipoRam;
+            await _tipoMemoriaRamCrud.Delete(id);
+
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória RAM apagado com sucesso."
+            };
         }
     }
 }

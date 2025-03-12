@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModuloManutencoes.Contexts;
-using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Dtos.UsuarioDtos;
-using ModuloManutencoes.Exceptions.UsuariosExceptions;
 using ModuloManutencoes.Interfaces;
-using ModuloManutencoes.Interfaces.Usuarios;
 using ModuloManutencoes.Models;
 using ModuloManutencoes.Repositories.Interfaces;
 using ModuloManutencoes.Services.Interfaces;
@@ -64,7 +61,7 @@ namespace ModuloManutencoes.Repositories
             return usuario;
         }
 
-        public async Task<MensagemAoClienteDTO> Create(UsuarioDTO usuario)
+        public async Task Create(UsuarioDTO usuario)
         {
             await _modManutencoesContext.Usuarios.AddAsync(new Usuario
             {
@@ -84,15 +81,9 @@ namespace ModuloManutencoes.Repositories
             });
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Usuário cadastrado com sucesso.",
-                Data = usuario
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Update(int userId, UsuarioDTO usuario)
+        public async Task Update(int userId, UsuarioDTO usuario)
         {
             Usuario? usuarioAtualizar = await _modManutencoesContext.Usuarios.FindAsync(userId);
 
@@ -107,44 +98,34 @@ namespace ModuloManutencoes.Repositories
             usuarioAtualizar.State = usuario.Estado;
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Usuário atualizado com sucesso."
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Delete(int userId)
+        public async Task Delete(int userId)
         {
             Usuario? usuarioAtualizar = await _modManutencoesContext.Usuarios.FindAsync(userId);
 
             usuarioAtualizar!.Active = "N";
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Usuário excluído com sucesso."
-            };
         }
 
         public async Task<bool> ValidarSeUsuarioExiste(int userId)
         {
-            Usuario? usuario = await _modManutencoesContext.Usuarios
+            bool usuario = await _modManutencoesContext.Usuarios
                 .Where(u => u.Active == "Y" && u.Id == userId)
-                .FirstOrDefaultAsync();
+                .AnyAsync();
 
-            return usuario != null;
+            return usuario;
         }
 
         public async Task<bool> ValidarEmailDisponivel(string email)
         {
-            string? emailJaExiste = await _modManutencoesContext.Usuarios
+            bool emailJaExiste = await _modManutencoesContext.Usuarios
                              .Where(u => u.Mail == email)
                              .Select(u => u.Mail)
-                             .FirstOrDefaultAsync();
+                             .AnyAsync();
 
-            return emailJaExiste != null ? false : true;
+            return !emailJaExiste;
         }
 
         public async Task<bool> ValidarSeExisteUsuarioSuperAdminCadastrado()

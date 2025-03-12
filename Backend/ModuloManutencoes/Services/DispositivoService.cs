@@ -35,27 +35,37 @@ namespace ModuloManutencoes.Services
         {
             await _validadorService.ValidarDispositivo(dispositivo);
 
-            MensagemAoClienteDTO adicionarDispositivo = await _dispositivoRepositoryCrud.Create(dispositivo);
+            await _dispositivoRepositoryCrud.Create(dispositivo);
 
-            return adicionarDispositivo;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Dispositivo adicionado com sucesso.",
+                Data = dispositivo
+            };
         }
 
         public async Task<MensagemAoClienteDTO> AtualizarDispositivo(int id, DispositivoDTO dispositivo)
         {
             await _validadorService.ValidarDispositivo(dispositivo, id);
 
-            MensagemAoClienteDTO atualizarDispositivo = await _dispositivoRepositoryCrud.Update(id, dispositivo);
+            await _dispositivoRepositoryCrud.Update(id, dispositivo);
 
-            return atualizarDispositivo;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Dispositivo atualizado com sucesso."
+            };
         }
 
         public async Task<MensagemAoClienteDTO> ApagarDispositivo(int id)
         {
             await _validadorService.ValidarDispositivo(id);
 
-            MensagemAoClienteDTO apagarDispositivo = await _dispositivoRepositoryCrud.Delete(id);
+            await _dispositivoRepositoryCrud.Delete(id);
 
-            return apagarDispositivo;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Dispositivo apagado com sucesso."
+            };
         }
     }
 }

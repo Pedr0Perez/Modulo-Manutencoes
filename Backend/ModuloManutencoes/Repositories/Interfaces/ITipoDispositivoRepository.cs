@@ -2,6 +2,6 @@
 {
     public interface ITipoDispositivoRepository
     {
-        Task<bool> ValidarSeDispositivoExiste(int dispId);
+        Task<bool> ValidarSeTipoDispositivoExiste(int dispId);
     }
 }
