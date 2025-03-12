@@ -43,7 +43,7 @@ namespace ModuloManutencoes.Repositories
             return dispositivo;
         }
 
-        public async Task<MensagemAoClienteDTO> Create(TipoDispositivoDTO tipoDispositivo)
+        public async Task Create(TipoDispositivoDTO tipoDispositivo)
         {
             await _modManutencoesContext.Disptype.AddAsync(new Disptype
             {
@@ -52,41 +52,25 @@ namespace ModuloManutencoes.Repositories
             });
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de Dispositivo adicionado com sucesso.",
-                Data = tipoDispositivo
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Update(int id, TipoDispositivoDTO tipoDispositivo)
+        public async Task Update(int id, TipoDispositivoDTO tipoDispositivo)
         {
             Disptype? tipoDispositivoAtualizar = await _modManutencoesContext.Disptype.FindAsync(id);
 
             tipoDispositivoAtualizar!.TypeDisp = tipoDispositivo.Descricao;
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de Dispositivo atualizado com sucesso."
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Delete(int id)
+        public async Task Delete(int id)
         {
             Disptype? tipoDispositivoAtualizar = await _modManutencoesContext.Disptype.FindAsync(id);
 
             tipoDispositivoAtualizar!.Active = "N";
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de Dispositivo excluído com sucesso."
-            };
         }
 
-        public async Task<bool> ValidarSeDispositivoExiste(int id)
+        public async Task<bool> ValidarSeTipoDispositivoExiste(int id)
         {
             Disptype? tipoDispositivo = await _modManutencoesContext.Disptype
                                                 .Where(d => d.Active == "Y" && d.Id == id)

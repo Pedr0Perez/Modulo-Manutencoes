@@ -113,6 +113,7 @@ namespace ModuloManutencoes
             //Repository do usuário
             builder.Services.AddScoped<ICrud<int, UsuarioDTO, UsuarioGetDTO>, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            builder.Services.AddScoped<IValidadorUsuarioService, ValidadorUsuarioService>();
 
             //Repository do tipo de dispositivo
             builder.Services.AddScoped<ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO>, TipoDispositivoRepository>();

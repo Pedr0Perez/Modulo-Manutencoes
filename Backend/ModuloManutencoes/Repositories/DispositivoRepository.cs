@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModuloManutencoes.Contexts;
 using ModuloManutencoes.Dtos.DispositivoDtos;
-using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Interfaces;
 using ModuloManutencoes.Models;
 using ModuloManutencoes.Repositories.Interfaces;
@@ -65,7 +64,7 @@ namespace ModuloManutencoes.Repositories
             return dispositivo;
         }
 
-        public async Task<MensagemAoClienteDTO> Create(DispositivoDTO dispositivo)
+        public async Task Create(DispositivoDTO dispositivo)
         {
             await _modManutencoesContext.Dispositivo.AddAsync(new Dispositivo
             {
@@ -85,15 +84,9 @@ namespace ModuloManutencoes.Repositories
             });
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Dispositivo adicionado com sucesso.",
-                Data = dispositivo
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Update(int id, DispositivoDTO dispositivo)
+        public async Task Update(int id, DispositivoDTO dispositivo)
         {
             Dispositivo? dispositivoAtualizar = await _modManutencoesContext.Dispositivo.FindAsync(id);
 
@@ -111,25 +104,15 @@ namespace ModuloManutencoes.Repositories
             dispositivoAtualizar.Note = dispositivo.Observacao;
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Dispositivo atualizado com sucesso."
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Delete(int id)
+        public async Task Delete(int id)
         {
             Dispositivo? dispositivoApagar = await _modManutencoesContext.Dispositivo.FindAsync(id);
 
             dispositivoApagar!.Active = "N";
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Dispositivo excluído com sucesso."
-            };
         }
 
         public async Task<bool> ValidarSeJaExisteDispositivoComEsteNome(string nome) //Para adicionar
@@ -155,33 +138,6 @@ namespace ModuloManutencoes.Repositories
             bool validar = await _modManutencoesContext.Dispositivo
                                     .Where(d => d.Active == "Y" && d.Id == id)
                                     .AnyAsync();
-
-            return validar;
-        }
-
-        public async Task<bool> ValidarSeTipoDispositivoExiste(int id)
-        {
-            bool validar = await _modManutencoesContext.Disptype
-                                    .Where(t => t.Active == "Y" && t.Id == id)
-                                    .AnyAsync();
-
-            return validar;
-        }
-
-        public async Task<bool> ValidarSeTipoRamExiste(int? id)
-        {
-            bool validar = await _modManutencoesContext.Ramtype
-                                .Where(t => t.Active == "Y" && t.Id == id)
-                                .AnyAsync();
-
-            return validar;
-        }
-
-        public async Task<bool> ValidarSeTipoVramExiste(int? id)
-        {
-            bool validar = await _modManutencoesContext.Vramtype
-                                 .Where(t => t.Active == "Y" && t.Id == id)
-                                 .AnyAsync();
 
             return validar;
         }

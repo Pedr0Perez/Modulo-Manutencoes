@@ -6,9 +6,9 @@ namespace ModuloManutencoes.Interfaces
     {
         Task<IEnumerable<TEntityGet>> GetAll();
         Task<TEntityGet?> GetById(TKey key);
-        Task<MensagemAoClienteDTO> Create(TEntity entity);
-        Task<MensagemAoClienteDTO> Update(TKey id, TEntity entity);
-        Task<MensagemAoClienteDTO> Delete(TKey id);
+        Task Create(TEntity entity);
+        Task Update(TKey id, TEntity entity);
+        Task Delete(TKey id);
 
     }
 }

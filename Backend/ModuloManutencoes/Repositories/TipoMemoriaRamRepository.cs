@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModuloManutencoes.Contexts;
 using ModuloManutencoes.Dtos.MemoriaDtos;
-using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Interfaces;
 using ModuloManutencoes.Models;
 using ModuloManutencoes.Repositories.Interfaces;
@@ -44,7 +43,7 @@ namespace ModuloManutencoes.Repositories
             return tipoRam;
         }
 
-        public async Task<MensagemAoClienteDTO> Create(TipoMemoriaRamDTO tipoRam)
+        public async Task Create(TipoMemoriaRamDTO tipoRam)
         {
             await _modManutencoesContext.Ramtype.AddAsync(new Ramtype
             {
@@ -53,67 +52,51 @@ namespace ModuloManutencoes.Repositories
             });
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de memória RAM adicionado com sucesso.",
-                Data = tipoRam
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Update(int id, TipoMemoriaRamDTO tipoRam)
+        public async Task Update(int id, TipoMemoriaRamDTO tipoRam)
         {
             Ramtype? tipoRamAtualizar = await _modManutencoesContext.Ramtype.FindAsync(id);
 
             tipoRamAtualizar!.TypeName = tipoRam.Descricao;
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de memória RAM atualizado com sucesso."
-            };
         }
 
-        public async Task<MensagemAoClienteDTO> Delete(int id)
+        public async Task Delete(int id)
         {
             Ramtype? tipoRamApagar = await _modManutencoesContext.Ramtype.FindAsync(id);
 
             tipoRamApagar!.Active = "N";
 
             await _modManutencoesContext.SaveChangesAsync();
-
-            return new MensagemAoClienteDTO
-            {
-                Mensagem = "Tipo de memória RAM excluído com sucesso."
-            };
         }
 
         public async Task<bool> ValidarSeTipoMemoriaRamExiste(int id)
         {
-            Ramtype? tipoRam = await _modManutencoesContext.Ramtype
-                                .Where(t => t.Id == id && t.Active == "Y")
-                                .FirstOrDefaultAsync();
+            bool validar = await _modManutencoesContext.Ramtype
+                                .Where(t => t.Active == "Y" && t.Id == id)
+                                .AnyAsync();
 
-            return tipoRam != null;
+            return validar;
         }
 
         public async Task<bool> ValidarSeJaExisteUmTipoMemoriaRamComEstaDescricao(string descricao) //Para caso esteja criando
         {
-            Ramtype? tipoRam = await _modManutencoesContext.Ramtype
+            bool tipoRam = await _modManutencoesContext.Ramtype
                                 .Where(t => t.TypeName!.ToUpper() == descricao.ToUpper() && t.Active == "Y")
-                                .FirstOrDefaultAsync();
+                                .AnyAsync();
 
-            return tipoRam == null;
+            return !tipoRam;
         }
 
         public async Task<bool> ValidarSeJaExisteUmTipoMemoriaRamComEstaDescricao(int id, string descricao) //Para caso esteja atualizando
         {
-            Ramtype? tipoRam = await _modManutencoesContext.Ramtype
+            bool tipoRam = await _modManutencoesContext.Ramtype
                                 .Where(t => t.TypeName!.ToUpper() == descricao.ToUpper() && t.Active == "Y" && t.Id != id)
-                                .FirstOrDefaultAsync();
+                                .AnyAsync();
 
-            return tipoRam == null;
+            return !tipoRam;
         }
     }
 }

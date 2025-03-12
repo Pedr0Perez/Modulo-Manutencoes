@@ -33,23 +33,27 @@ namespace ModuloManutencoes.Services
             return tipoVram;
         }
 
-        public async Task<MensagemAoClienteDTO> AdicionarTipoMemoriaVram(TipoMemoriaVramDTO tipoMemoriaRam)
+        public async Task<MensagemAoClienteDTO> AdicionarTipoMemoriaVram(TipoMemoriaVramDTO tipoMemoriaVram)
         {
-            bool validarSeJaExisteTipoVramComEstaDescricao = await _tipoMemoriaVramValidation.ValidarSeJaExisteUmTipoMemoriaVramComEstaDescricao(tipoMemoriaRam.Descricao);
+            bool validarSeJaExisteTipoVramComEstaDescricao = await _tipoMemoriaVramValidation.ValidarSeJaExisteUmTipoMemoriaVramComEstaDescricao(tipoMemoriaVram.Descricao);
             if (!validarSeJaExisteTipoVramComEstaDescricao)
             {
                 throw new DescricaoTipoMemoriaVramJaExisteException();
             }
 
-            MensagemAoClienteDTO adicionarTipoVram = await _tipoMemoriaVramCrud.Create(tipoMemoriaRam);
+            await _tipoMemoriaVramCrud.Create(tipoMemoriaVram);
 
-            return adicionarTipoVram;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória VRAM adicionado com sucesso.",
+                Data = tipoMemoriaVram
+            };
         }
 
-        public async Task<MensagemAoClienteDTO> AtualizarTipoMemoriaVram(int id, TipoMemoriaVramDTO tipoMemoriaRam)
+        public async Task<MensagemAoClienteDTO> AtualizarTipoMemoriaVram(int id, TipoMemoriaVramDTO tipoMemoriaVram)
         {
             bool validarSeTipoVramExiste = await _tipoMemoriaVramValidation.ValidarSeTipoMemoriaVramExiste(id);
-            bool validarSeJaExisteTipoVramComEstaDescricao = await _tipoMemoriaVramValidation.ValidarSeJaExisteUmTipoMemoriaVramComEstaDescricao(id, tipoMemoriaRam.Descricao);
+            bool validarSeJaExisteTipoVramComEstaDescricao = await _tipoMemoriaVramValidation.ValidarSeJaExisteUmTipoMemoriaVramComEstaDescricao(id, tipoMemoriaVram.Descricao);
 
             if (!validarSeTipoVramExiste)
             {
@@ -61,9 +65,12 @@ namespace ModuloManutencoes.Services
                 throw new DescricaoTipoMemoriaVramJaExisteException();
             }
 
-            MensagemAoClienteDTO atualizarTipoVram = await _tipoMemoriaVramCrud.Update(id, tipoMemoriaRam);
+            await _tipoMemoriaVramCrud.Update(id, tipoMemoriaVram);
 
-            return atualizarTipoVram;
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória VRAM atualizado com sucesso."
+            };
         }
 
         public async Task<MensagemAoClienteDTO> ApagarTipoMemoriaVram(int id)
@@ -72,11 +79,16 @@ namespace ModuloManutencoes.Services
 
             if (!validarSeTipoVramExiste)
             {
+
                 throw new TipoMemoriaVramNaoEncontradoException();
             }
 
-            MensagemAoClienteDTO apagarTipoVram = await _tipoMemoriaVramCrud.Delete(id);
-            return apagarTipoVram;
+            await _tipoMemoriaVramCrud.Delete(id);
+
+            return new MensagemAoClienteDTO
+            {
+                Mensagem = "Tipo de memória VRAM apagado com sucesso."
+            };
         }
     }
 }

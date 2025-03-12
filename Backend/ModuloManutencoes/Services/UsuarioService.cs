@@ -1,10 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ModuloManutencoes.Contexts;
-using ModuloManutencoes.Dtos.MensagemDtos;
+﻿using ModuloManutencoes.Dtos.MensagemDtos;
 using ModuloManutencoes.Dtos.UsuarioDtos;
-using ModuloManutencoes.Exceptions.UsuariosExceptions;
-using ModuloManutencoes.Models;
-using ModuloManutencoes.Repositories.Interfaces;
 using ModuloManutencoes.Interfaces.Usuarios;
 using ModuloManutencoes.Services.Interfaces;
 using ModuloManutencoes.Interfaces;
@@ -14,14 +9,14 @@ namespace ModuloManutencoes.Services
     public class UsuarioService : IUsuarioService
     {
         private readonly ICrud<int, UsuarioDTO, UsuarioGetDTO> _usuarioRepositoyCrud;
-        private readonly IUsuarioRepository _usuarioRepositoryValidation;
         private readonly IConfiguration _configuration;
+        private readonly IValidadorUsuarioService _validadorService;
 
-        public UsuarioService(ICrud<int, UsuarioDTO, UsuarioGetDTO> usuarioRepositoyCrud, IUsuarioRepository usuarioRepositoryValidation, IConfiguration configuration)
+        public UsuarioService(ICrud<int, UsuarioDTO, UsuarioGetDTO> usuarioRepositoyCrud, IConfiguration configuration, IValidadorUsuarioService validadorService)
         {
             _usuarioRepositoyCrud = usuarioRepositoyCrud;
-            _usuarioRepositoryValidation = usuarioRepositoryValidation;
             _configuration = configuration;
+            _validadorService = validadorService;
         }
 
         public async Task<IEnumerable<UsuarioGetDTO>> RetornarListaUsuarios()
@@ -40,27 +35,20 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> CadastrarUsuario(UsuarioDTO usuario)
         {
-            bool validarSeEmailRecebidoEstaDisponivel = await _usuarioRepositoryValidation.ValidarEmailDisponivel(usuario.Email);
-            if (!validarSeEmailRecebidoEstaDisponivel)
-            {
-                throw new EmailJaCadastradoException();
-            }
+            await _validadorService.ValidarUsuario(usuario.Email);
 
             await _usuarioRepositoyCrud.Create(usuario);
 
             return new MensagemAoClienteDTO
             {
-                Mensagem = "Usuário cadastrado com sucesso."
+                Mensagem = "Usuário cadastrado com sucesso.",
+                Data = usuario
             };
         }
 
         public async Task<MensagemAoClienteDTO> AtualizarUsuario(int userId, UsuarioDTO usuario)
         {
-            bool validarSeUsuarioExiste = await _usuarioRepositoryValidation.ValidarSeUsuarioExiste(userId);
-            if (!validarSeUsuarioExiste)
-            {
-                throw new UsuarioNaoEncontradoException();
-            }
+            await _validadorService.ValidarUsuario(userId);
 
             await _usuarioRepositoyCrud.Update(userId, usuario);
 
@@ -72,11 +60,7 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> ApagarUsuario(int userId)
         {
-            bool validarSeUsuarioExiste = await _usuarioRepositoryValidation.ValidarSeUsuarioExiste(userId);
-            if (!validarSeUsuarioExiste)
-            {
-                throw new UsuarioNaoEncontradoException();
-            }
+            await _validadorService.ValidarUsuario(userId);
 
             await _usuarioRepositoyCrud.Delete(userId);
 
@@ -86,11 +70,9 @@ namespace ModuloManutencoes.Services
             };
         }
 
-        public async Task CadastrarUsuarioSuperAdministradorCasoNaoExista() 
+        public async Task CadastrarUsuarioSuperAdministradorCasoNaoExista()
         {
-            bool validarSeExisteAlgumUsuario = await _usuarioRepositoryValidation.ValidarSeExisteUsuarioSuperAdminCadastrado();
-
-            if (!validarSeExisteAlgumUsuario)
+            if (!await _validadorService.ValidarSeExisteUsuarioSuperAdminCadastrado())
             {
                 await _usuarioRepositoyCrud.Create(new UsuarioDTO
                 {
@@ -106,3 +88,4 @@ namespace ModuloManutencoes.Services
         }
     }
 }
+
