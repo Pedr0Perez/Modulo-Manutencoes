@@ -11,16 +11,12 @@
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\tipodispositivoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\tipomemoriavramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\tipomemoriavramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\validadortipodispositivoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\validadortipodispositivoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\tipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\tipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\interfaces\\ivalidadorusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\interfaces\\ivalidadorusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\interfaces\\ivalidadortipodispositivoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\interfaces\\ivalidadortipodispositivoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,9 +36,35 @@
               "RelativeDocumentMoniker": "ModuloManutencoes\\appsettings.json",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\appsettings.json",
               "RelativeToolTip": "ModuloManutencoes\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-12T00:31:41.696Z",
+              "WhenOpened": "2025-03-12T02:16:30.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IValidadorTipoDispositivoService.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoDispositivoService.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoDispositivoService.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoDispositivoService.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoDispositivoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T01:54:16.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ValidadorTipoDispositivoService.cs",
+              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\ValidadorTipoDispositivoService.cs",
+              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\ValidadorTipoDispositivoService.cs",
+              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\ValidadorTipoDispositivoService.cs",
+              "RelativeToolTip": "ModuloManutencoes\\Services\\ValidadorTipoDispositivoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T01:46:55.143Z",
               "EditorCaption": ""
             },
             {
@@ -53,48 +75,9 @@
               "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\TipoDispositivoService.cs",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\TipoDispositivoService.cs",
               "RelativeToolTip": "ModuloManutencoes\\Services\\TipoDispositivoService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwCcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T00:31:53.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TipoMemoriaVramService.cs",
-              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\TipoMemoriaVramService.cs",
-              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\TipoMemoriaVramService.cs",
-              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\TipoMemoriaVramService.cs",
-              "RelativeToolTip": "ModuloManutencoes\\Services\\TipoMemoriaVramService.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFoAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T00:13:24.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TipoMemoriaRamService.cs",
-              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\TipoMemoriaRamService.cs",
-              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\TipoMemoriaRamService.cs",
-              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\TipoMemoriaRamService.cs",
-              "RelativeToolTip": "ModuloManutencoes\\Services\\TipoMemoriaRamService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAowEoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T00:09:25.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IValidadorUsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\Interfaces\\IValidadorUsuarioService.cs",
-              "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\Interfaces\\IValidadorUsuarioService.cs",
-              "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\Interfaces\\IValidadorUsuarioService.cs",
-              "RelativeToolTip": "ModuloManutencoes\\Services\\Interfaces\\IValidadorUsuarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T00:02:29.051Z",
               "EditorCaption": ""
             }
           ]
