@@ -10,12 +10,12 @@ namespace ModuloManutencoes.Services
     public class TipoMemoriaRamService : ITipoMemoriaRamService
     {
         private readonly ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> _tipoMemoriaRamCrud;
-        private readonly ITipoMemoriaRamRepository _tipoMemoriaRamValidation;
+        private readonly IValidadorTipoMemoriaRam _validador;
 
-        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> tipoMemoriaRamCrud, ITipoMemoriaRamRepository tipoMemoriaRamValidation)
+        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> tipoMemoriaRamCrud, IValidadorTipoMemoriaRam validador)
         {
             _tipoMemoriaRamCrud = tipoMemoriaRamCrud;
-            _tipoMemoriaRamValidation = tipoMemoriaRamValidation;
+            _validador = validador;
         }
 
         public async Task<IEnumerable<TipoMemoriaRamGetDTO>> RetornarTodosTiposMemoriasRam()
@@ -34,11 +34,7 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> AdicionarTipoMemoriaRam(TipoMemoriaRamDTO tipoMemoriaRam)
         {
-            bool validarSeJaExisteTipoRamComEstaDescricao = await _tipoMemoriaRamValidation.ValidarSeJaExisteUmTipoMemoriaRamComEstaDescricao(tipoMemoriaRam.Descricao);
-            if (!validarSeJaExisteTipoRamComEstaDescricao)
-            {
-                throw new DescricaoTipoMemoriaRamJaExisteException();
-            }
+            await _validador.ValidarTipoMemoriaRam(tipoMemoriaRam.Descricao);
 
             await _tipoMemoriaRamCrud.Create(tipoMemoriaRam);
 
@@ -51,18 +47,7 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> AtualizarTipoMemoriaRam(int id, TipoMemoriaRamDTO tipoMemoriaRam)
         {
-            bool validarSeTipoRamExiste = await _tipoMemoriaRamValidation.ValidarSeTipoMemoriaRamExiste(id);
-            bool validarSeJaExisteTipoRamComEstaDescricao = await _tipoMemoriaRamValidation.ValidarSeJaExisteUmTipoMemoriaRamComEstaDescricao(id, tipoMemoriaRam.Descricao);
-
-            if (!validarSeTipoRamExiste)
-            {
-                throw new TipoMemoriaRamNaoEncontradoException();
-            }
-
-            if (!validarSeJaExisteTipoRamComEstaDescricao)
-            {
-                throw new DescricaoTipoMemoriaRamJaExisteException();
-            }
+            await _validador.ValidarTipoMemoriaRam(id, tipoMemoriaRam.Descricao);
 
             await _tipoMemoriaRamCrud.Update(id, tipoMemoriaRam);
 
@@ -74,12 +59,7 @@ namespace ModuloManutencoes.Services
 
         public async Task<MensagemAoClienteDTO> ApagarTipoMemoriaRam(int id)
         {
-            bool validarSeTipoRamExiste = await _tipoMemoriaRamValidation.ValidarSeTipoMemoriaRamExiste(id);
-
-            if (!validarSeTipoRamExiste)
-            {
-                throw new TipoMemoriaRamNaoEncontradoException();
-            }
+            await _validador.ValidarTipoMemoriaRam(id);
 
             await _tipoMemoriaRamCrud.Delete(id);
 

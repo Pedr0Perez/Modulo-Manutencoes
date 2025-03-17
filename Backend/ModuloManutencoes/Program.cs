@@ -123,6 +123,7 @@ namespace ModuloManutencoes
             //Repository do tipo de memória ram
             builder.Services.AddScoped<ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO>, TipoMemoriaRamRepository>();
             builder.Services.AddScoped<ITipoMemoriaRamRepository, TipoMemoriaRamRepository>();
+            builder.Services.AddScoped<IValidadorTipoMemoriaRam, ValidadorTipoMemoriaRamService>();
 
             //Repository do tipo de memória vram
             builder.Services.AddScoped<ICrud<int, TipoMemoriaVramDTO, TipoMemoriaVramGetDTO>, TipoMemoriaVramRepository>();
