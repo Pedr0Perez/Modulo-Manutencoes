@@ -4,7 +4,7 @@ using ModuloManutencoes.Services.Interfaces;
 
 namespace ModuloManutencoes.Services
 {
-    public class ValidadorTipoMemoriaRamService : IValidadorTipoMemoriaRam
+    public class ValidadorTipoMemoriaRamService : IValidadorTipoMemoriaRamService
     {
         private readonly ITipoMemoriaRamRepository _repository;
 

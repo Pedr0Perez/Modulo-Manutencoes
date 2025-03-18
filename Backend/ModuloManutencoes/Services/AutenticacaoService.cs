@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.ComponentModel.DataAnnotations;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
@@ -13,62 +14,91 @@ namespace ModuloManutencoes.Services
     {
         private readonly IAutenticacaoRepository _autenticacaoRepository;
         private readonly IConfiguration _configuration;
+        private readonly IValidadorAutenticacaoService _validador;
 
-        public AutenticacaoService(IAutenticacaoRepository autenticacaoRepository, IConfiguration configuration)
+        public AutenticacaoService(IAutenticacaoRepository autenticacaoRepository, IConfiguration configuration, IValidadorAutenticacaoService validador)
         {
             _autenticacaoRepository = autenticacaoRepository;
             _configuration = configuration;
+            _validador = validador;
         }
 
         public async Task<DadosSessaoDTO> RealizarAutenticacao(LoginDTO login)
         {
-            bool validarSeEmailExiste = await _autenticacaoRepository.ValidarSeEmailExiste(login.Email);
-            if (!validarSeEmailExiste)
-            {
-                throw new EnderecoEmailNaoExisteException();
-            }
-
-            bool validarSenhaUsuario = await _autenticacaoRepository.ValidarSenhaUsuario(login.Email, login.Senha);
-
-            if (!validarSenhaUsuario)
-            {
-                throw new SenhaIncorretaException();
-            }
+            await _validador.ValidarCredenciaisInseridas(login.Email, login.Senha);
 
             DadosUsuarioDTO dadosUsuario = await _autenticacaoRepository.RetornarDadosSessao(login.Email);
+
             string token = GerarToken(dadosUsuario.Id.ToString());
 
-            DadosSessaoDTO dadosSessao = new DadosSessaoDTO
+            DadosSessaoDTO dadosSessao = MapearDadosSessao(dadosUsuario, token);
+
+            return dadosSessao;
+        }
+
+        private DadosSessaoDTO MapearDadosSessao(DadosUsuarioDTO dadosUsuario, string token)
+        {
+            return new DadosSessaoDTO
             {
                 Nome = dadosUsuario.Nome,
                 Email = dadosUsuario.Email,
                 Genero = dadosUsuario.Genero,
                 Token = token,
             };
-
-            return dadosSessao;
-
         }
-
-
 
         private string GerarToken(string userId)
         {
-            string jwtKey = _configuration.GetSection("JwtConfiguration")["SecretJwtKey"];
+            string jwtKey = ColetarJwtKey();
 
-            string jwtIssuer = _configuration.GetSection("JwtConfiguration")["Issuer"];
+            string jwtIssuer = ColetarJwtIssuer();
 
-            var claims = new[]
+            var claims = CriarClaims(userId);
+
+            var securityKey = GerarChaveSeguranca(jwtKey);
+            var credentials = GerarCredenciaisAssinatura(securityKey);
+
+            var token = CriarToken(jwtIssuer, claims, credentials);
+
+            return ConverterTokenParaString(token);
+        }
+
+        private string ColetarJwtKey()
+        {
+            return _configuration.GetSection("JwtConfiguration")["SecretJwtKey"];
+        }
+
+        private string ColetarJwtIssuer()
+        {
+            return _configuration.GetSection("JwtConfiguration")["Issuer"];
+        }
+
+        private Claim[] CriarClaims(string userId)
+        {
+            return new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, userId),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
+        }
 
-            SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("JwtConfiguration")["SecretJwtKey"]));
-            SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        private SymmetricSecurityKey GerarChaveSeguranca(string jwtKey)
+        {
+            return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+        }
 
-            JwtSecurityToken token = new JwtSecurityToken(issuer: jwtIssuer, audience: jwtIssuer, claims: claims, expires: DateTime.UtcNow.AddHours(1), signingCredentials: credentials);
+        private SigningCredentials GerarCredenciaisAssinatura(SymmetricSecurityKey securityKey)
+        {
+            return new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        }
 
+        private JwtSecurityToken CriarToken(string jwtIssuer, Claim[] claims, SigningCredentials credentials)
+        {
+            return new JwtSecurityToken(issuer: jwtIssuer, audience: jwtIssuer, claims: claims, expires: DateTime.UtcNow.AddHours(12), signingCredentials: credentials);
+        }
+
+        private string ConverterTokenParaString(JwtSecurityToken token)
+        {
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }

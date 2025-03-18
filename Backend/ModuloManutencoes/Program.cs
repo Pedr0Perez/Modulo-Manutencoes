@@ -113,17 +113,14 @@ namespace ModuloManutencoes
             //Repository do usuário
             builder.Services.AddScoped<ICrud<int, UsuarioDTO, UsuarioGetDTO>, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            builder.Services.AddScoped<IValidadorUsuarioService, ValidadorUsuarioService>();
 
             //Repository do tipo de dispositivo
             builder.Services.AddScoped<ICrud<int, TipoDispositivoDTO, TipoDispositivoGetDTO>, TipoDispositivoRepository>();
             builder.Services.AddScoped<ITipoDispositivoRepository, TipoDispositivoRepository>();
-            builder.Services.AddScoped<IValidadorTipoDispositivoService, ValidadorTipoDispositivoService>();
 
             //Repository do tipo de memória ram
             builder.Services.AddScoped<ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO>, TipoMemoriaRamRepository>();
             builder.Services.AddScoped<ITipoMemoriaRamRepository, TipoMemoriaRamRepository>();
-            builder.Services.AddScoped<IValidadorTipoMemoriaRam, ValidadorTipoMemoriaRamService>();
 
             //Repository do tipo de memória vram
             builder.Services.AddScoped<ICrud<int, TipoMemoriaVramDTO, TipoMemoriaVramGetDTO>, TipoMemoriaVramRepository>();
@@ -138,15 +135,19 @@ namespace ModuloManutencoes
 
             //Service do usuário
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+            builder.Services.AddScoped<IValidadorUsuarioService, ValidadorUsuarioService>();
 
             //Service do tipo de dispositivo
             builder.Services.AddScoped<ITipoDispositivoService, TipoDispositivoService>();
+            builder.Services.AddScoped<IValidadorTipoDispositivoService, ValidadorTipoDispositivoService>();
 
             //Service do tipo de memória ram
             builder.Services.AddScoped<ITipoMemoriaRamService, TipoMemoriaRamService>();
+            builder.Services.AddScoped<IValidadorTipoMemoriaRamService, ValidadorTipoMemoriaRamService>();
 
             //Service do tipo de memória vram
             builder.Services.AddScoped<ITipoMemoriaVramService, TipoMemoriaVramService>();
+            builder.Services.AddScoped<IValidadorTipoMemoriaVramService, ValidadorTipoMemoriaVramService>();
 
             //Service do dispositivo
             builder.Services.AddScoped<IDispositivoService, DispositivoService>();
@@ -154,6 +155,7 @@ namespace ModuloManutencoes
 
             //Service da autenticação
             builder.Services.AddScoped<IAutenticacaoService, AutenticacaoService>();
+            builder.Services.AddScoped<IValidadorAutenticacaoService, ValidadorAutenticacaoService>();
 
             builder.Services.AddHttpContextAccessor();
 
