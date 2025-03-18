@@ -10,9 +10,9 @@ namespace ModuloManutencoes.Services
     public class TipoMemoriaRamService : ITipoMemoriaRamService
     {
         private readonly ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> _tipoMemoriaRamCrud;
-        private readonly IValidadorTipoMemoriaRam _validador;
+        private readonly IValidadorTipoMemoriaRamService _validador;
 
-        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> tipoMemoriaRamCrud, IValidadorTipoMemoriaRam validador)
+        public TipoMemoriaRamService(ICrud<int, TipoMemoriaRamDTO, TipoMemoriaRamGetDTO> tipoMemoriaRamCrud, IValidadorTipoMemoriaRamService validador)
         {
             _tipoMemoriaRamCrud = tipoMemoriaRamCrud;
             _validador = validador;
