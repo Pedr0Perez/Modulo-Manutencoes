@@ -1,0 +1,59 @@
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.card-login {
+  align-items: center;
+  padding: 4rem 1rem 4rem 1rem;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 2px 1px rgb(0, 0, 0, 0.3);
+}
+
+.button-container-login {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.remember-me-container {
+  display: flex;
+  width: 100%;
+}
+
+.login-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo-container img {
+  height: 45px;
+  width: 45px;
+}
+
+.login-logo-container p {
+  margin-top: 0px;
+  margin-bottom: 1.33rem;
+}
+
+@media screen and (max-width: 400px){
+  .card-login{
+    box-shadow: none !important;
+    padding: 0.5rem !important;
+  }
+}
+
+@media screen and (max-height: 490px) {
+  .card-login{
+    box-shadow: none !important;
+    padding: 0.5rem !important;
+  }
+}

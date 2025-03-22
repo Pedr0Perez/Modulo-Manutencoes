@@ -1,0 +1,27 @@
+:root {
+  --text-gray: #4f4f4f;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Roboto", sans-serif;
+}
+
+.god {
+  min-height: 100vh;
+}
+
+.text-gray {
+  color: var(--text-gray) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--text-gray);
+}
