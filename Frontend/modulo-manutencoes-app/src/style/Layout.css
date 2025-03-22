@@ -1,0 +1,100 @@
+/* Definição das variáveis CSS */
+:root {
+  --m-1: 0.33rem;
+  --m-2: 0.66rem;
+  --m-3: 1rem;
+  --m-4: 1.33rem;
+  --m-5: 1.66rem;
+}
+
+
+/* Estilização para margem inferior */
+.mb-1 {
+  margin-bottom: var(--m-1) !important;
+}
+
+.mb-2 {
+  margin-bottom: var(--m-2) !important;
+}
+
+.mb-3 {
+  margin-bottom: var(--m-3) !important;
+}
+
+.mb-4 {
+  margin-bottom: var(--m-4) !important;
+}
+
+.mb-5 {
+  margin-bottom: var(--m-5) !important;
+}
+
+
+/* Estilização para margem superior */
+.mt-1 {
+  margin-top: var(--m-1) !important;
+}
+
+.mt-2 {
+  margin-top: var(--m-2) !important;
+}
+
+.mt-3 {
+  margin-top: var(--m-3) !important;
+}
+
+.mt-4 {
+  margin-top: var(--m-4) !important;
+}
+
+.mt-5 {
+  margin-top: var(--m-5) !important;
+}
+
+
+/* Estilização para margem lateral esquerda */
+.ml-1 {
+  margin-left: var(--m-1) !important;
+}
+
+.ml-2 {
+  margin-left: var(--m-2) !important;
+}
+
+.ml-3 {
+  margin-left: var(--m-3) !important;
+}
+
+.ml-4 {
+  margin-left: var(--m-4) !important;
+}
+
+.ml-5 {
+  margin-left: var(--m-5) !important;
+}
+
+
+/* Estilização para margem lateral direita */
+.mr-1 {
+  margin-right: var(--m-1) !important;
+}
+
+.mr-2 {
+  margin-right: var(--m-2) !important;
+}
+
+.mr-3 {
+  margin-right: var(--m-3) !important;
+}
+
+.mr-4 {
+  margin-right: var(--m-4) !important;
+}
+
+.mr-5 {
+  margin-right: var(--m-5) !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
