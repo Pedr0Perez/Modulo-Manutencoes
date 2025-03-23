@@ -7,4 +7,7 @@ export interface DefaultTextFieldProps {
   fullWidth?: boolean;
   className?: string;
   type?: string;
+  error?: boolean;
+  helperText?: string;
+  disabled?: boolean;
 }
