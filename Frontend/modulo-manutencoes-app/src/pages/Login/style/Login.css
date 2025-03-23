@@ -15,6 +15,15 @@
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 0 2px 1px rgb(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.linear-progress-login-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .button-container-login {
@@ -44,16 +53,26 @@
   margin-bottom: 1.33rem;
 }
 
-@media screen and (max-width: 400px){
-  .card-login{
+@media screen and (max-width: 400px) {
+  .card-login {
     box-shadow: none !important;
     padding: 0.5rem !important;
+    border-radius: 0 !important;
+  }
+
+  .linear-progress-login-container{
+    position: fixed !important;
   }
 }
 
 @media screen and (max-height: 490px) {
-  .card-login{
+  .card-login {
     box-shadow: none !important;
     padding: 0.5rem !important;
+    border-radius: 0 !important;
+  }
+
+  .linear-progress-login-container{
+    position: fixed !important;
   }
 }

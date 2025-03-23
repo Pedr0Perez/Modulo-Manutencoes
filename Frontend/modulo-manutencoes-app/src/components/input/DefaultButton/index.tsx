@@ -6,6 +6,7 @@ const DefaultButton = ({
   children,
   onClick,
   fullWidth = true,
+  disabled = false,
 }: IDefaultButtonProps) => {
   return (
     <Button
@@ -13,6 +14,7 @@ const DefaultButton = ({
       onClick={onClick}
       fullWidth={fullWidth}
       sx={{ backgroundColor: "#D32F2F" }}
+      disabled={disabled}
     >
       {children}
     </Button>

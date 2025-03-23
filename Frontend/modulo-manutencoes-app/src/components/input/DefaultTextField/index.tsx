@@ -13,6 +13,9 @@ const DefaultTextField = ({
   fullWidth = true,
   className = "",
   type = "",
+  error = false,
+  helperText = "",
+  disabled = false,
 }: DefaultTextFieldProps) => {
   const outerTheme = useTheme();
 
@@ -36,6 +39,9 @@ const DefaultTextField = ({
         className={className}
         type={type}
         sx={{ borderColor: "red" }}
+        error={error}
+        helperText={helperText}
+        disabled={disabled}
       />
     </ThemeProvider>
   );

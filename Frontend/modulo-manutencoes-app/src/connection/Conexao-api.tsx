@@ -3,18 +3,24 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
+import getItemLocalStorage from "../utils/getItemLocalStorage";
 
 const api: AxiosInstance = axios.create({
-  baseURL: "http://localhost:7173/api/",
+  baseURL: "https://localhost:7021/api/",
 });
 
 api.interceptors.request.use(
   async (
     config: InternalAxiosRequestConfig<any>
   ): Promise<InternalAxiosRequestConfig<any>> => {
+    const token = getItemLocalStorage("token");
+    if (token !== null) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+
     return config;
   },
-  async (error: any): Promise<never> => {
+  async (error: Error): Promise<never> => {
     return Promise.reject(error);
   }
 );
@@ -25,7 +31,7 @@ api.interceptors.response.use(
   ): Promise<AxiosResponse<any, any>> => {
     return response;
   },
-  async (error: any): Promise<never> => {
+  async (error: Error): Promise<never> => {
     return Promise.reject(error);
   }
 );
