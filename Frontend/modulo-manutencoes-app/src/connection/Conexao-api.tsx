@@ -3,7 +3,7 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
-import getItemLocalStorage from "../utils/getItemLocalStorage";
+import getItemLocalStorage from "../utils/localStorage/getItemLocalStorage";
 
 const api: AxiosInstance = axios.create({
   baseURL: "https://localhost:7021/api/",

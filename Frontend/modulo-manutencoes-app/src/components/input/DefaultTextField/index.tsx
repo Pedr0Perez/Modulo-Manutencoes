@@ -4,7 +4,7 @@ import { DefaultTextFieldProps } from "./interface/DefaultTextFieldProps";
 import { ThemeProvider, useTheme } from "@mui/material/styles";
 import customTheme from "./function/customTheme";
 
-const DefaultTextField = ({
+const DefaultTextField = <T,>({
   label,
   value,
   setValue,
@@ -16,7 +16,7 @@ const DefaultTextField = ({
   error = false,
   helperText = "",
   disabled = false,
-}: DefaultTextFieldProps) => {
+}: DefaultTextFieldProps<T>) => {
   const outerTheme = useTheme();
 
   return (
@@ -24,15 +24,17 @@ const DefaultTextField = ({
       <TextField
         label={label}
         value={value}
-        onChange={(e) => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+          const newValue = e.target.value as unknown as T;
+
           if (!valueInObject) {
-            setValue(e.target.value);
+            setValue(newValue);
             return;
           }
 
           setValue((prevState: any) => ({
             ...prevState,
-            [name]: e.target.value,
+            [name]: newValue,
           }));
         }}
         fullWidth={fullWidth}
@@ -47,4 +49,4 @@ const DefaultTextField = ({
   );
 };
 
-export default memo<DefaultTextFieldProps>(DefaultTextField);
+export default memo(DefaultTextField) as typeof DefaultTextField;
