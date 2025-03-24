@@ -1,7 +1,7 @@
-export interface DefaultTextFieldProps {
+export interface DefaultTextFieldProps<T> {
   label: string;
   value: string | null;
-  setValue: any;
+  setValue: React.Dispatch<React.SetStateAction<T>>;
   valueInObject?: boolean;
   name?: string;
   fullWidth?: boolean;

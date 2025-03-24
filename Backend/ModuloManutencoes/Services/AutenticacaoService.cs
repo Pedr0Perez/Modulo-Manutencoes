@@ -44,6 +44,7 @@ namespace ModuloManutencoes.Services
                 Email = dadosUsuario.Email,
                 Genero = dadosUsuario.Genero,
                 Token = token,
+                ExpiracaoToken = DateTime.UtcNow.AddHours(12),
             };
         }
 

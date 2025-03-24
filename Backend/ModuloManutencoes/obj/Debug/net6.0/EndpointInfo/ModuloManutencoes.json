@@ -1178,6 +1178,10 @@
           "token": {
             "type": "string",
             "nullable": true
+          },
+          "expiracaoToken": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

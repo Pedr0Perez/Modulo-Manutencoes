@@ -3,4 +3,5 @@ export interface ILoginSucessoResposta {
   genero: string;
   nome: string;
   token: string;
+  expiracaoToken: Date;
 }

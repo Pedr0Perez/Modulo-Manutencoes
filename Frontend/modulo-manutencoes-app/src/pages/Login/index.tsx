@@ -1,19 +1,24 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import DefaultTextField from "../../components/input/DefaultTextField";
 import "./style/Login.css";
 import { ILoginFormulario } from "./interface/ILoginFormulario";
 import DefaultButton from "../../components/input/DefaultButton";
 import DefaultCheckbox from "../../components/input/DefaultCheckbox";
 import api from "../../connection/Conexao-api";
-import setItemLocalStorage from "../../utils/setItemLocalStorage";
 import { ILoginSucessoResposta } from "./interface/ILoginSucessoResposta";
 import DefaultLinearProgress from "../../components/progress/DefaultLinearProgress";
+import iniciarSessao from "../../utils/sessao/iniciarSessao";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [formulario, setFormulario] = useState<ILoginFormulario>({
     email: "",
     senha: "",
   });
+
+  const navigate = useNavigate();
+
+  const formularioMemorizado = useMemo(() => formulario, [formulario]);
 
   const [lembrarMe, setLembrarMe] = useState<boolean>(false);
 
@@ -24,8 +29,10 @@ const Login = () => {
       .post("/autenticacao", formulario)
       .then((response) => {
         const data: ILoginSucessoResposta = response.data;
-        setItemLocalStorage("token", data.token);
+
+        iniciarSessao(data);
         setExibirErroAutenticacao(false);
+        navigate("/home");
       })
       .catch((err) => {
         console.error(err);
@@ -54,7 +61,7 @@ const Login = () => {
         </div>
         <div className="input-container-login">
           <DefaultTextField
-            value={formulario.email}
+            value={formularioMemorizado.email}
             setValue={setFormulario}
             valueInObject={true}
             label="E-mail"
@@ -62,9 +69,10 @@ const Login = () => {
             className="mb-3"
             error={exibirErroAutenticacao}
             disabled={exibirLoading}
+            type="email"
           />
           <DefaultTextField
-            value={formulario.senha}
+            value={formularioMemorizado.senha}
             setValue={setFormulario}
             label="Senha"
             valueInObject={true}
@@ -91,8 +99,8 @@ const Login = () => {
           <DefaultButton
             onClick={async () => await realizarAutenticacao()}
             disabled={
-              formulario.email === "" ||
-              formulario.senha === "" ||
+              formularioMemorizado.email === "" ||
+              formularioMemorizado.senha === "" ||
               exibirLoading
             }
           >
