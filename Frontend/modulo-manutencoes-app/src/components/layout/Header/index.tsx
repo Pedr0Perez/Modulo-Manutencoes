@@ -13,7 +13,6 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import history from "../../../libs/history/history";
 import { useNavigate } from "react-router-dom";
 
 const Header = (): React.JSX.Element => {
@@ -126,7 +125,7 @@ const Header = (): React.JSX.Element => {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ height: "max-content", zIndex: "10" }}>
       <AppBar position="static" color="default">
         <Toolbar>
           <IconButton

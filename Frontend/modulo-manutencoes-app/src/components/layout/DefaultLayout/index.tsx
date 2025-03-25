@@ -1,15 +1,18 @@
 import Header from "../Header";
 import ContentPage from "../ContentPage";
+import Sidebar from "../Sidebar";
 import Footer from "../Footer";
 import { Outlet } from "react-router-dom";
-import verificarSessaoAtiva from "../../../middlewares/verificarSessaoAtiva";
 
 const DefaultLayout = () => {
   return (
     <>
       <Header />
       <ContentPage>
-        <Outlet />
+        <>
+          <Sidebar />
+          <Outlet />
+        </>
       </ContentPage>
       <Footer />
     </>

@@ -1,0 +1,25 @@
+.sidebar-container {
+  position: absolute;
+  width: 252px;
+  top: 0;
+  bottom: 0;
+  box-shadow: 0 0 2px 2px rgb(0, 0, 0, 0.15);
+}
+
+.sidebar-container.hide {
+  overflow: hidden !important;
+  width: 0 !important;
+}
+
+.sidebar-anchor-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapse-items-sidebar {
+  display: none;
+}
+
+.collapse-items-sidebar.show {
+  display: block !important;
+}

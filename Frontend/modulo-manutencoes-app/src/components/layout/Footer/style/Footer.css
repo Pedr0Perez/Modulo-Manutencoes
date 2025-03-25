@@ -3,5 +3,6 @@ footer {
   justify-content: center;
   align-items: center;
   height: 60px;
-  background-color: azure;
+  box-shadow: 0 0 2px 2px rgb(0, 0, 0, 0.15);
+  background-color: #fff;
 }
