@@ -34,7 +34,7 @@ const Rotas = () => {
           }
         >
           <Route path="home" element={<Home />} />
-          <Route path="usuarios" element={<Usuarios />} />
+          <Route path="gerenciamento/usuarios" element={<Usuarios />} />
         </Route>
         <Route path="*" element={<NotFound404 />} />
       </Routes>

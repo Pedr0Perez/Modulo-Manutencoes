@@ -2,12 +2,12 @@ import { memo } from "react";
 import { Button } from "@mui/material";
 import { IDefaultButtonProps } from "./interface/IDefaultButtonProps";
 
-const DefaultButton = ({
+const DefaultButton = <T,>({
   children,
   onClick,
   fullWidth = true,
   disabled = false,
-}: IDefaultButtonProps) => {
+}: IDefaultButtonProps<T>) => {
   return (
     <Button
       variant="contained"
@@ -21,4 +21,4 @@ const DefaultButton = ({
   );
 };
 
-export default memo<IDefaultButtonProps>(DefaultButton);
+export default memo(DefaultButton) as typeof DefaultButton;

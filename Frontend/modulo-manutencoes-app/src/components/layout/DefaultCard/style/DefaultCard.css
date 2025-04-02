@@ -1,0 +1,30 @@
+.default-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  margin: 16px;
+  margin-left: 16px;
+  flex: 1;
+  box-shadow: 0 0 2px 2px rgb(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: margin-left ease-in-out 0.25s;
+}
+
+.default-card-header {
+  border-bottom: solid rgba(0, 0, 0, 0.116) 1px;
+}
+
+.default-card-body,
+.default-card-header {
+  padding: 1rem;
+}
+
+.default-card-header .title-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.default-card.sidebar-open {
+  margin-left: 292px;
+}

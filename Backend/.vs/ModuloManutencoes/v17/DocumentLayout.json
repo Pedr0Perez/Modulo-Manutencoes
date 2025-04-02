@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\validadortipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\validadortipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -11,20 +19,12 @@
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\validadortipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\validadortipomemoriaramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\interfaces\\ivalidadortipomemoriavramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\interfaces\\ivalidadortipomemoriavramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\validadorautenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\validadorautenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|solutionrelative:modulomanutencoes\\services\\autenticacaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{21C750B4-EAEB-4EED-BCAA-F8B11909B672}|ModuloManutencoes\\ModuloManutencoes.csproj|c:\\users\\vidad\\documents\\git\\modulo-manutencoes\\backend\\modulomanutencoes\\services\\validadortipomemoriavramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ValidadorAutenticacaoService.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\ValidadorAutenticacaoService.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\ValidadorAutenticacaoService.cs",
@@ -54,19 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "AutenticacaoService.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\AutenticacaoService.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\AutenticacaoService.cs",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\AutenticacaoService.cs",
               "RelativeToolTip": "ModuloManutencoes\\Services\\AutenticacaoService.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAQwC4AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T01:35:43.914Z"
+              "WhenOpened": "2025-03-18T01:35:43.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ValidadorTipoMemoriaRamService.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\ValidadorTipoMemoriaRamService.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\ValidadorTipoMemoriaRamService.cs",
@@ -74,11 +75,12 @@
               "RelativeToolTip": "ModuloManutencoes\\Services\\ValidadorTipoMemoriaRamService.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T01:26:40.35Z"
+              "WhenOpened": "2025-03-18T01:26:40.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IValidadorTipoMemoriaVramService.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoMemoriaVramService.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Services\\Interfaces\\IValidadorTipoMemoriaVramService.cs",
@@ -102,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\Program.cs",
               "RelativeDocumentMoniker": "ModuloManutencoes\\Program.cs",
@@ -114,13 +116,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\appsettings.json",
               "RelativeDocumentMoniker": "ModuloManutencoes\\appsettings.json",
               "ToolTip": "C:\\Users\\vidad\\Documents\\GIT\\Modulo-Manutencoes\\Backend\\ModuloManutencoes\\appsettings.json",
               "RelativeToolTip": "ModuloManutencoes\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-12T02:16:30.998Z",
               "EditorCaption": ""

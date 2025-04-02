@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import alterarTitleDom from "../../utils/generic/alterarTitleDom";
+import CardGerenciamentoUsuarios from "../../components/pages/GerenciamentoUsuarios/CardGerenciamentoUsuarios";
 
 const Usuarios = (): React.JSX.Element => {
   useEffect(() => {
-    alterarTitleDom("Usuários");
+    alterarTitleDom("Gerenciamento de Usuários");
   }, []);
 
-  return <></>;
+  return <CardGerenciamentoUsuarios />;
 };
 
 export default Usuarios;

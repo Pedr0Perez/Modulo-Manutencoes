@@ -2,14 +2,14 @@ import { memo } from "react";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { IDefaultCheckboxProps } from "./interface/IDefaultCheckboxProps";
 
-const DefaultCheckbox = ({
+const DefaultCheckbox = <T,>({
   label,
   value,
   setValue,
   valueInObject = false,
   name = "",
   className = "",
-}: IDefaultCheckboxProps) => {
+}: IDefaultCheckboxProps<T>) => {
   return (
     <FormControlLabel
       control={
@@ -39,4 +39,4 @@ const DefaultCheckbox = ({
   );
 };
 
-export default memo(DefaultCheckbox);
+export default memo(DefaultCheckbox) as typeof DefaultCheckbox;
